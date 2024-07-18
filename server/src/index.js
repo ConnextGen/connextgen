@@ -1,10 +1,10 @@
-require('dotenv').config({ path: "server/src/credentials/.env" })
+require('dotenv').config({ path: "credentials/.env" })
 
 const express = require("express"),
       api = require("./api");
 
 const cors = require("cors");
-1
+const cookieParser = require("cookie-parser");
 
 const { connectMongoDB } = require("./db/mongoDB.js");
 const { connectRedisClient } = require("./db/redisClient.js");
