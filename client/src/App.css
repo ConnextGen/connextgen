@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.background {
+  background-image: url('/public/background.svg');
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.pane {
+  padding: 30px 150px 50px;
+  background-color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  border-left: 3px solid white;
+  border-right: 3px solid white;
+  border-radius: 40px;
+}
+
+.pane h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 70px;
+  color: #294c60;
+}
+
+.text-entry {
+  margin: 30px 0;
+  width: 100%;
+  text-align: left;
+}
+
+.text-entry h3 {
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #294c60;
+}
+
+.text-entry input {
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+.link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-decoration: none;
+  color: #00a3ff;
+}
+
+.button {
+  padding: 20px 200px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  text-decoration: none;
+  background-color: rgb(41, 76, 96, 0.85);
   color: white;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.pane h2 {
+  margin-top: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #294c60;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button-container {
+  margin-top: 100px;
 }
