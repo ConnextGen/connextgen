@@ -1,5 +1,6 @@
 import '../App.css';
 import TextEntry from '../components/TextEntry';
+import Dropdown from '../components/Dropdown';
 
 function SignUp() {
     return (
@@ -10,6 +11,10 @@ function SignUp() {
                     <TextEntry header="First Name"/>
                     <TextEntry header="Last Name"/>
                 </div>
+                <Dropdown header="Select School" options={['School 1', 'School 2', 'School 3']}/>
+                <TextEntry header="Email"/>
+                <TextEntry header="Create Password"/>
+                <TextEntry header="Confirm Password"/>
                 <div className="button-container">
                     <a href="#" class="button">Sign Up</a>
                     <h2>Already have an account? <a href='login' class="link">Login</a></h2>

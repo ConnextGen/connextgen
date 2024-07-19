@@ -11,7 +11,7 @@ const TextEntry = ({ header }) => {
     };
 
     return (
-        <div className="text-entry">
+        <div className="field-entry">
             <h3>{header}</h3>
             <TextField
                 type={header === 'Password' && !isPasswordVisible ? 'password' : 'text'}
