@@ -1,4 +1,6 @@
-require('dotenv').config({ path: "credentials/.env" })
+const path = require("path");
+
+require('dotenv').config({ path: path.resolve(__dirname, "credentials/.env") })
 
 const express = require("express"),
       api = require("./api");
