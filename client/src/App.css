@@ -34,7 +34,7 @@
   color: #294c60;
 }
 
-.button {
+#login-button, #sign-up-button {
   padding: 20px 200px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
@@ -69,7 +69,7 @@
 }
 
 .field-entry {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: left;
 }
 
@@ -81,9 +81,9 @@
   color: #294c60;
 }
 
-.field-entry input {
+/* .field-entry input {
   padding: 10px;
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 20px;
-}
+} */

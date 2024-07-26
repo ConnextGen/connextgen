@@ -85,7 +85,7 @@ const loginUser = asyncHandler(async (req, res) => {
     /* store session info and generate cookie */
     const sessionInfo = generateSession(user.id);
     
-    storeSessionData(sessionInfo.sessionId, sessionInfo.userId);
+    await storeSessionData(sessionInfo.sessionId, sessionInfo.userId);
 
     res.cookie("sessionId", sessionInfo.sessionId, { 
       httpOnly: true, 
