@@ -1,18 +1,19 @@
-import '../App.css';
-// import TextEntry from '../components/TextEntry';
+import { useEffect } from "react";
 import LoginForm from "../components/LoginForm";
+import '../App.css';
 
-function Login() {
+const Login = () => {
+    useEffect(() => {
+        document.title = 'ConnextGen | Log In';
+    }, []);
+
     return (
-        <>
         <div className="background">
             <div className="pane">
-                <h1>Welcome Back 👋</h1>
+                <h1>Welcome Back</h1>
                 <LoginForm />
-                <h2>Don't have an account? <a href='signup' className="link">Sign Up</a></h2>
             </div>
         </div>
-        </>
     );
 }
 

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 .background {
   background-image: url('/public/background.svg');
@@ -10,33 +11,100 @@
 }
 
 .pane {
-  padding: 30px 150px 50px;
-  background-color: rgba(255, 255, 255, 0.6);
-  text-align: center;
-  max-width: 600px;
-  border-left: 3px solid white;
-  border-right: 3px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+  gap: 20px;
+
+  background: url('/public/noise.png'), linear-gradient(123.41deg, #FFFFFF 7.72%, rgba(255, 255, 255, 0.7) 36.12%, rgba(255, 255, 255, 0.5) 63.88%, rgba(255, 255, 255, 0.525108) 77.87%, rgba(255, 255, 255, 0.65) 96.17%);
+  background-blend-mode: overlay, normal;
+  box-shadow: 0px 4px 30px rgba(55, 89, 102, 0.45);
+  backdrop-filter: blur(10px);
+  border: #f5f6fe 1.5px solid;
   border-radius: 40px;
+
+  width: 960px;
 }
 
 .pane h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 54px;
+  margin: 0 0 2px;
+  font-family: "DM Serif Text", serif;
+  font-weight: 300;
+  font-size: 70px;
   color: #294c60;
 }
 
 .pane h2 {
-  margin-top: 30px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 300;
   font-size: 20px;
   color: #294c60;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fields {
+  padding: 10px 0px 20px;
+  width: 600px;
+}
+
+.fields a {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  text-decoration: none;
+  color: #00A3FF;
+}
+
+.field {
+  text-align: left;
+}
+
+.field h3 {
+  margin-top: -2px;
+  margin-bottom: 5px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #294c60;
+}
+
+.names {
+  display: flex;
+  justify-content: space-between;
+}
+
+.names .field {
+  width: 45%;
+}
+
+.button {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #294c60;
+}
+
+.button a {
+  text-decoration: none;
+  color: #00A3FF;
+}
+
 #login-button, #sign-up-button {
   padding: 20px 200px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 500;
   font-size: 24px;
   text-decoration: none;
@@ -45,45 +113,3 @@
   border-radius: 30px;
   cursor: pointer;
 }
-
-.button-container {
-  margin-top: 80px;
-}
-
-.names {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.names .field-entry {
-  width: 45%;
-}
-
-.link {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  text-decoration: none;
-  color: #00a3ff;
-}
-
-.field-entry {
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-.field-entry h3 {
-  margin-bottom: 10px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  color: #294c60;
-}
-
-/* .field-entry input {
-  padding: 10px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-} */

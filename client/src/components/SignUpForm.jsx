@@ -1,7 +1,5 @@
-import { useState } from 'react';
-import { TextField, InputAdornment, IconButton, FormLabel, Box, Button } from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { Form, Formik, useFormik } from "formik";
+import { Box, Button } from '@mui/material';
+import { useFormik } from "formik";
 import '../App.css';
 import FormTextField from './FormTextField';
 import Dropdown from './Dropdown';
@@ -55,47 +53,25 @@ const SignUpForm = () => {
         <Box>
 
             <form onSubmit={formik.handleSubmit}>
-                <div className="names">
-                    <FormTextField header="First Name" identifier="firstName" formik={formik}/>
-                    <FormTextField header="Last Name" identifier="lastName" formik={formik}/>
+                <div className="fields">
+                    <div className="names">
+                        <FormTextField header="First Name" identifier="firstName" formik={formik}/>
+                        <FormTextField header="Last Name" identifier="lastName" formik={formik}/>
+                    </div>
+                    <Dropdown header="Select School" identifier="school" options={['School 1', 'School 2', 'School 3']} formik={formik}/>
+                    <FormTextField header="Email" identifier="email" formik={formik}/>
+                    <FormTextField header="Create Password" identifier="password" type="password" formik={formik}/>
+                    <FormTextField header="Confirm Password" identifier="confirmPassword" type="password" formik={formik}/>
                 </div>
-                <Dropdown header="Select School" identifier="school" options={['School 1', 'School 2', 'School 3']} formik={formik}/>
-                <FormTextField header="Email" identifier="email" formik={formik}/>
-                <FormTextField header="Create Password" identifier="password" type="password" formik={formik}/>
-                <FormTextField header="Confirm Password" identifier="confirmPassword" type="password" formik={formik}/>
-
-                <Button id="sign-up-button" variant="contained" type="submit">Sign Up</Button>
+                <div className="button">
+                    <Button id="sign-up-button" variant="contained" type="submit">Sign Up</Button>
+                    <h3>Already have an account? <a href='login' className="link">Log In</a></h3>
+                </div>
             </form>
 
         </Box>
         </>
     );
-
-    // return (
-    //     <div className="field-entry">
-    //         <FormLabel>{header}</FormLabel>
-    //         <TextField
-    //             type={header === 'Password' && !isPasswordVisible ? 'password' : 'text'}
-    //             fullWidth
-    //             InputProps={{
-    //             endAdornment: header === 'Password' && (
-    //                 <InputAdornment position="end">
-    //                 <IconButton
-    //                     aria-label="toggle password visibility"
-    //                     onClick={togglePasswordVisibility}
-    //                     edge="end"
-    //                 >
-    //                     {isPasswordVisible ? <Visibility /> : <VisibilityOff />}
-    //                 </IconButton>
-    //                 </InputAdornment>
-    //             ),
-    //             }}
-    //         />
-    //         {header === 'Password' && (
-    //             <a href="#" className="link">Forgot Password?</a>
-    //         )}
-    //     </div>
-    // );
 };
 
 export default SignUpForm;

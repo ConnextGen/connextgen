@@ -1,7 +1,5 @@
-// import { useState } from 'react';
-import { Box, Button } from '@mui/material';
-// import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { Form, Formik, useFormik } from "formik";
+import { Button } from '@mui/material';
+import { useFormik } from "formik";
 import '../App.css';
 import { validateEmail, validatePassword } from '../utils/validationUtils';
 
@@ -38,44 +36,17 @@ const LoginForm = () => {
         }
     });
     return (
-        <>
-        <Box>
-
-            <form onSubmit={formik.handleSubmit}>
+        <form class="form" onSubmit={formik.handleSubmit}>
+            <div class="fields">
                 <FormTextField header="Email" identifier="email" formik={formik}/>
                 <FormTextField header="Password" identifier="password" type="password" formik={formik}/>
-                <Button id="login-button" variant="contained" type="submit">Login</Button>
-            </form>
-
-        </Box>
-        </>
+            </div>
+            <div class="button">
+                <Button id="login-button" variant="contained" type="submit">Log In</Button>
+                <h3>Don't have an account? <a href='signup' className="link">Sign Up</a></h3>
+            </div>
+        </form>
     );
-
-    // return (
-    //     <div className="field-entry">
-    //         <FormLabel>{header}</FormLabel>
-    //         <TextField
-    //             type={header === 'Password' && !isPasswordVisible ? 'password' : 'text'}
-    //             fullWidth
-    //             InputProps={{
-    //             endAdornment: header === 'Password' && (
-    //                 <InputAdornment position="end">
-    //                 <IconButton
-    //                     aria-label="toggle password visibility"
-    //                     onClick={togglePasswordVisibility}
-    //                     edge="end"
-    //                 >
-    //                     {isPasswordVisible ? <Visibility /> : <VisibilityOff />}
-    //                 </IconButton>
-    //                 </InputAdornment>
-    //             ),
-    //             }}
-    //         />
-    //         {header === 'Password' && (
-    //             <a href="#" className="link">Forgot Password?</a>
-    //         )}
-    //     </div>
-    // );
 };
 
 export default LoginForm;

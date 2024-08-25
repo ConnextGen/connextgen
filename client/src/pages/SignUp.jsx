@@ -1,14 +1,17 @@
+import { useEffect } from "react";
+import SignUpForm from '../components/SignUpForm';
 import '../App.css';
 
-import SignUpForm from '../components/SignUpForm';
+const SignUp = () => {
+    useEffect(() => {
+        document.title = 'ConnextGen | Sign Up';
+    }, []);
 
-function SignUp() {
     return (
         <div className="background">
             <div className="pane">
-                <h1>Sign Up 👤</h1>
+                <h1>Sign Up</h1>
                 <SignUpForm />
-                <h2>Already have an account? <a href='login' className="link">Login</a></h2>
             </div>
         </div>
     );

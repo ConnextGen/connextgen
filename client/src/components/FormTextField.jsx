@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { TextField, InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import '../App.css';
 
-const TextEntry = ({ header, identifier, type, formik }) => {
+const FormTextField = ({ header, identifier, type, formik }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     const togglePasswordVisibility = () => {
@@ -11,25 +10,18 @@ const TextEntry = ({ header, identifier, type, formik }) => {
     };
 
     return (
-        <div className="field-entry">
-            {/* <FormLabel>{header}</FormLabel> */}
+        <div className="field">
+            <h3>{header}</h3>
             <TextField
                 type={type === 'password' && !isPasswordVisible ? 'password' : 'text'}
                 fullWidth
                 id={identifier}
                 name={identifier}
-                label={header}
                 value={formik.values[identifier]}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 error={formik.touched[identifier] && Boolean(formik.errors[identifier])}
                 helperText={(formik.touched[identifier] && formik.errors[identifier]) || ' '}
-                // FormHelperTextProps={{
-                //     sx: {
-                //         position: "absolute",
-                //         bottom: "-1.5em",
-                //     }
-                // }}
                 InputProps={{
                 endAdornment: type === 'password' && (
                     <InputAdornment position="end">
@@ -43,12 +35,30 @@ const TextEntry = ({ header, identifier, type, formik }) => {
                     </InputAdornment>
                 ),
                 }}
+                sx={{
+                    "& fieldset": {
+                        borderTop: 'none',
+                        borderLeft: 'none',
+                        borderRight: 'none',
+                        borderRadius: '5px',
+                        borderColor: '#294C60',
+                    },
+                  
+                    "& .MuiInputBase-root": {
+                        height: '50px',
+                        backgroundColor: 'rgba(233, 237, 239, 0.5)',
+                        fontFamily: 'Quicksand, sans-serif',
+                        color: '#294C60',
+                    },
+
+                    ".MuiFormHelperText-root": {
+                        fontFamily: 'Quicksand, sans-serif',
+                        margin: '0px',
+                    }
+                }}
             />
-            {header === 'Password' && (
-                <a href="#" className="link">Forgot Password?</a>
-            )}
         </div>
     );
 };
 
-export default TextEntry;
+export default FormTextField;
