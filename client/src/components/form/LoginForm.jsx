@@ -1,11 +1,10 @@
 import { Button } from '@mui/material';
-import { useFormik } from "formik";
-import '../App.css';
-import { validateEmail, validatePassword } from '../utils/validationUtils';
+import { useFormik } from 'formik';
+import { validateEmail, validatePassword } from '../../utils/validationUtils';
+import styles from './Form.module.css';
 
-import FormTextField from "./FormTextField";
-
-import { login } from '../api';
+import FormTextField from './FormTextField';
+import { login } from '../../api';
 
 const LoginForm = () => {
     const formik = useFormik({
@@ -16,8 +15,8 @@ const LoginForm = () => {
         validate: values => {
             const errors = {};
 
-            validateEmail(values, errors, "email");
-            validatePassword(values, errors, "password");
+            validateEmail(values, errors, 'email');
+            validatePassword(values, errors, 'password');
 
             return errors;
         },
@@ -36,14 +35,14 @@ const LoginForm = () => {
         }
     });
     return (
-        <form class="form" onSubmit={formik.handleSubmit}>
-            <div class="fields">
-                <FormTextField header="Email" identifier="email" formik={formik}/>
-                <FormTextField header="Password" identifier="password" type="password" formik={formik}/>
+        <form className={styles.form} onSubmit={formik.handleSubmit}>
+            <div className={styles.fields}>
+                <FormTextField header='Email' identifier='email' formik={formik}/>
+                <FormTextField header='Password' identifier='password' type='password' formik={formik}/>
             </div>
-            <div class="button">
-                <Button id="login-button" variant="contained" type="submit">Log In</Button>
-                <h3>Don't have an account? <a href='signup' className="link">Sign Up</a></h3>
+            <div className={styles.button}>
+                <Button id={styles.logInButton} variant='contained' type='submit'>Log In</Button>
+                <h3>Don't have an account? <a href='signup'>Sign Up</a></h3>
             </div>
         </form>
     );

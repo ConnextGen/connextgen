@@ -1,9 +1,10 @@
 import { FormHelperText, MenuItem, FormControl, Select } from '@mui/material';
+import styles from './Form.module.css';
 
 
 const Dropdown = ({ header, identifier, options, formik }) => {
     return (
-        <div className="field">
+        <div className={styles.field}>
             <h3>{header}</h3>
             <FormControl fullWidth error={formik.touched[identifier] && Boolean(formik.errors[identifier])}>
                 <Select
@@ -15,7 +16,7 @@ const Dropdown = ({ header, identifier, options, formik }) => {
                     onBlur={formik.handleBlur}
                     error={formik.touched[identifier] && Boolean(formik.errors[identifier])}
                     sx={{
-                        "& fieldset": {
+                        '& fieldset': {
                             borderTop: 'none',
                             borderLeft: 'none',
                             borderRight: 'none',
@@ -23,7 +24,7 @@ const Dropdown = ({ header, identifier, options, formik }) => {
                             borderColor: '#294C60',
                         },
                       
-                        "& .MuiSelect-select": {
+                        '& .MuiSelect-select': {
                             backgroundColor: 'rgba(233, 237, 239, 0.5)',
                             fontFamily: 'Quicksand, sans-serif',
                             color: '#294C60',

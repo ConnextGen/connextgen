@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.fields {
+  padding: 10px 0px 20px;
+  width: 600px;
+}
+
+.fields a {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  text-decoration: none;
+  color: #00A3FF;
+}
+
+.field {
+  text-align: left;
+}
+
+.field h3 {
+  margin-top: -2px;
+  margin-bottom: 5px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #294c60;
+}
+
+.names {
+  display: flex;
+  justify-content: space-between;
+}
+
+.names .field {
+  width: 45%;
+}
+
+.button {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #294c60;
+}
+
+.button a {
+  text-decoration: none;
+  color: #00A3FF;
+}
+
+#logInButton, #signUpButton {
+  padding: 20px 200px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-decoration: none;
+  background-color: rgba(41, 76, 96, 0.85);
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+}
