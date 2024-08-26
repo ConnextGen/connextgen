@@ -9,7 +9,7 @@
     width: 100vw;
     height: 80vh;
 
-    background-image: url('/assets/images/backgrounds/waves.svg');
+    background-image: url('../../assets/images/backgrounds/waves.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,7 +54,7 @@
     margin-bottom: -10px;
 }
 
-#signUpButton {
+#signUpButton, #helpButton {
     padding: 20px 200px;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
@@ -94,6 +94,101 @@
     margin: 0 0 -3vh;
 }
 
+.background {
+    background: linear-gradient(265.67deg, #56889F 7.04%, #6EB8B4 93.18%);
+}
+
 .aspects {
-    background: linear-gradient(265.67deg, #56889F 7.04%, #6EB8B4 93.18%)
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh 0;
+}
+
+.aspect {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2vh auto;
+    width: 85vw;
+}
+
+.aspect > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    padding: 2vh 0.5vw;
+}
+
+.aspect h1 {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-size: 3em;
+    color: #e2f3f3;
+    text-align: center;
+    text-shadow: 0px 0px 20px rgba(41, 76, 96, 0.5);
+    letter-spacing: 0.01em;
+    margin: 0;
+}
+
+.aspect h1:after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 1px;
+    background-color: #e2f3f3;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aspect p {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 1.8em;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    line-height: 1.2;
+    margin: 1vh;
+}
+
+.aspect img {
+    width: 13vw;
+}
+
+.wave4 {
+    margin-bottom: -0.5vh;
+}
+
+.help {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 8vh 16vw;
+    gap: 2vh;
+}
+
+.help h1 {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-size: 3em;
+    color: #294c60;
+    text-align: center;
+    margin: 0;
+}
+
+.help p {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 1.8em;
+    color: #294c60;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    margin: 0 0 2vh;
 }
