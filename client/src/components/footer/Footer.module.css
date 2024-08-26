@@ -14,7 +14,7 @@
     align-items: center;
     justify-content: center;
     gap: 1vh;
-    padding: 5vh 0;
+    padding: 5vh 0 3vh;
 }
 
 .logo {
@@ -32,5 +32,5 @@
     font-weight: 400;
     font-size: 1.5vw;
     color: white;
-    margin: -0.5vh;
+    margin-top: -0.5vh;
 }
