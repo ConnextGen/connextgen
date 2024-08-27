@@ -5,6 +5,8 @@
 }
 
 .wave {
+    width: 100vw;
+    height: auto;
     margin-bottom: -15vh;
 }
 

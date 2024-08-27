@@ -20,12 +20,12 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
+        <>
             <NavigationBar />
             <div className={styles.landing}>
                 <div className={styles.hero}>
                     <div className={styles.pane}>
-                        <img src={logo2} alt='logo2'></img>
+                        <img className={styles.heroText}src={logo2} alt='logo2'></img>
                         <h1>Enabling high school students to gain professional experience.</h1>
                         <Button id={styles.signUpButton} component={Link} to='/signup' variant='contained'>Sign Up</Button>
                     </div>
@@ -35,12 +35,12 @@ const Home = () => {
                 </div>
             </div>
             <div className={styles.mission}>
-                <img src={wave2} alt='wave2'></img>
+                <img className={styles.wave} src={wave2} alt='wave2'></img>
                 <h1>Our Mission</h1>
                 <p>ConnextGen empowers high school students to gain professional experience by providing a comprehensive platform for skills development, networking, and opportunity discovery. We aim to demystify the process of findings jobs and internships for every student.</p>
             </div>
             <div className={styles.background}>
-                <img src={wave3} alt='wave3'></img>
+                <img className={styles.wave} src={wave3} alt='wave3'></img>
                 <div className={styles.aspects}>
                     <div className={styles.aspect}>
                         <div>
@@ -85,7 +85,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <img className={styles.wave4} src={wave4} alt='wave3'></img>
+                <img className={[styles.wave4, styles.wave].join(' ')} src={wave4} alt='wave3'></img>
             </div>
             <div className={styles.help}>
                 <h1>Interested In Helping?</h1>
@@ -93,7 +93,7 @@ const Home = () => {
                 <Button id={styles.helpButton} component={Link} to='https://docs.google.com/forms/d/e/1FAIpQLSc1znrRftbxtVVQRtDC03t6fnKH9o1jaMchdc3U16Xl9sk_Cw/viewform?usp=sf_link' variant='contained' target="_blank">I'm Interested</Button>
             </div>
             <Footer />
-        </div>
+        </>
     );
 } 
 
