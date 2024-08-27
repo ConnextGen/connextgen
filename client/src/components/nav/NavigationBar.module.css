@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 8.5vw;
+    min-height: 16vh;
 
     background-image: url('../../assets/images/backgrounds/wave.png');
     background-position: bottom;
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    padding: 1.3vh 4vw;
+    padding: 1.5vh 4vw;
 }
 
 .nav div {
@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     font-family: 'Quicksand', sans-serif;
-    font-size: 1.15vw;
+    font-size: 2vh;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
@@ -47,7 +47,7 @@
     position: relative;
     bottom: 0.1vh;
     left: 0.5vw;
-    width: 1.15vw;
+    height: 2vh;
     opacity: 0.75;
     transition: color 0.1s ease-in-out;
 }
