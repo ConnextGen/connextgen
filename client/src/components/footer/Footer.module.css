@@ -7,7 +7,8 @@
 .wave {
     width: 100vw;
     height: auto;
-    margin-bottom: -15vh;
+    position: absolute;
+    margin-top: -1px;
 }
 
 .footer {
@@ -16,7 +17,7 @@
     align-items: center;
     justify-content: center;
     gap: 1vh;
-    padding: 5vh 0 3vh;
+    padding: 7vw 0 3vh;
 }
 
 .logo {

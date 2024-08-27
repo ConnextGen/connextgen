@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
+
 .landing {
     display: flex;
     justify-content: center;
@@ -129,6 +130,7 @@
 
 .background {
     background: linear-gradient(265.67deg, #56889F 7.04%, #6EB8B4 93.18%);
+    z-index: -1;
 }
 
 .aspects {
@@ -193,13 +195,19 @@
     width: 13vw;
 }
 
-.wave {
+.waveTop {
     width: 100vw;
     height: auto;
-}
 
-.wave4 {
-    margin-bottom: -0.5vh;
+    margin-top: -1px;
+    vertical-align: top;
+}
+.waveBottom {
+    width: 100vw;
+    height: auto;
+
+    margin-bottom: -1px;
+    vertical-align: bottom;
 }
 
 .help {

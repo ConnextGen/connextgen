@@ -35,12 +35,12 @@ const Home = () => {
                 </div>
             </div>
             <div className={styles.mission}>
-                <img className={styles.wave} src={wave2} alt='wave2'></img>
+                <img className={styles.waveTop} src={wave2} alt='wave2'></img>
                 <h1>Our Mission</h1>
                 <p>ConnextGen empowers high school students to gain professional experience by providing a comprehensive platform for skills development, networking, and opportunity discovery. We aim to demystify the process of findings jobs and internships for every student.</p>
             </div>
             <div className={styles.background}>
-                <img className={styles.wave} src={wave3} alt='wave3'></img>
+                <img className={styles.waveTop} src={wave3} alt='wave3'></img>
                 <div className={styles.aspects}>
                     <div className={styles.aspect}>
                         <div>
@@ -85,7 +85,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <img className={[styles.wave4, styles.wave].join(' ')} src={wave4} alt='wave3'></img>
+                <img className={styles.waveBottom} src={wave4} alt='wave4'></img>
             </div>
             <div className={styles.help}>
                 <h1>Interested In Helping?</h1>
