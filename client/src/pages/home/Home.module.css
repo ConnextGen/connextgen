@@ -80,13 +80,7 @@
     cursor: pointer;
 }
 
-
-
-/* smaller screen */
 @media only screen and (max-width: 900px) {
-    /* .hero {
-        flex-direction: column;
-    } */
     .pane {
         width: 80%;
     }

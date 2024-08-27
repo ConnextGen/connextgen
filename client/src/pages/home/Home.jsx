@@ -3,15 +3,15 @@ import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import NavigationBar from '../../components/nav/NavigationBar';
 import Footer from '../../components/footer/Footer';
-import logo from '../../assets/images/icons/logo.png';
-import logo2 from '../../assets/images/icons/logo2.png';
-import wave2 from '../../assets/images/backgrounds/wave2.png';
-import wave3 from '../../assets/images/backgrounds/wave3.png';
-import course from '../../assets/images/icons/course.png';
-import networking from '../../assets/images/icons/networking.png';
-import clubs from '../../assets/images/icons/clubs.png';
-import speakers from '../../assets/images/icons/speakers.png';
-import wave4 from '../../assets/images/backgrounds/wave4.png';
+import Logo from '../../assets/images/icons/logo.png';
+import Logo2 from '../../assets/images/icons/logo2.png';
+import Wave2 from '../../assets/images/backgrounds/wave2.png';
+import Wave3 from '../../assets/images/backgrounds/wave3.png';
+import Course from '../../assets/images/icons/course.png';
+import Networking from '../../assets/images/icons/networking.png';
+import Clubs from '../../assets/images/icons/clubs.png';
+import Speakers from '../../assets/images/icons/speakers.png';
+import Wave4 from '../../assets/images/backgrounds/wave4.png';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -25,22 +25,22 @@ const Home = () => {
             <div className={styles.landing}>
                 <div className={styles.hero}>
                     <div className={styles.pane}>
-                        <img className={styles.heroText}src={logo2} alt='logo2'></img>
+                        <img className={styles.heroText}src={Logo2} alt='logo2'></img>
                         <h1>Enabling high school students to gain professional experience.</h1>
                         <Button id={styles.signUpButton} component={Link} to='/signup' variant='contained'>Sign Up</Button>
                     </div>
                     <div className={styles.heroImage}>
-                        <img src={logo} alt='logo' className={styles.logo}></img>
+                        <img src={Logo} alt='logo' className={styles.logo}></img>
                     </div>
                 </div>
             </div>
             <div className={styles.mission}>
-                <img className={styles.waveTop} src={wave2} alt='wave2'></img>
+                <img className={styles.waveTop} src={Wave2} alt='wave2'></img>
                 <h1>Our Mission</h1>
                 <p>ConnextGen empowers high school students to gain professional experience by providing a comprehensive platform for skills development, networking, and opportunity discovery. We aim to demystify the process of findings jobs and internships for every student.</p>
             </div>
             <div className={styles.background}>
-                <img className={styles.waveTop} src={wave3} alt='wave3'></img>
+                <img className={styles.waveTop} src={Wave3} alt='wave3'></img>
                 <div className={styles.aspects}>
                     <div className={styles.aspect}>
                         <div>
@@ -48,14 +48,14 @@ const Home = () => {
                             <p>Utilizing ConnextGen’s online course, students will build crucial professional skills not taught in schools, such as building resumes, preparing for interviews, writing cover letters, and more.</p>
                         </div>
                         <div>
-                            <img src={course} alt='course'></img>
+                            <img src={Course} alt='course'></img>
                         </div>
                     </div>
                 </div>
                 <div className={styles.aspects}>
                     <div className={styles.aspect}>
                         <div>
-                            <img src={networking} alt='networking'></img>
+                            <img src={Networking} alt='networking'></img>
                         </div>
                         <div>
                             <h1>Student Networking</h1>
@@ -70,14 +70,14 @@ const Home = () => {
                             <p>Through clubs, students will gain access to the online course and networking platform. During club meetings, students will also able to receive mentoring from members of the ConnextGen team.</p>
                         </div>
                         <div>
-                            <img src={clubs} alt='clubs'></img>
+                            <img src={Clubs} alt='clubs'></img>
                         </div>
                     </div>
                 </div>
                 <div className={styles.aspects}>
                     <div className={styles.aspect}>
                         <div>
-                            <img src={speakers} alt='speakers'></img>
+                            <img src={Speakers} alt='speakers'></img>
                         </div>
                         <div>
                             <h1>Professional Speakers</h1>
@@ -85,7 +85,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <img className={styles.waveBottom} src={wave4} alt='wave4'></img>
+                <img className={styles.waveBottom} src={Wave4} alt='wave4'></img>
             </div>
             <div className={styles.help}>
                 <h1>Interested In Helping?</h1>
