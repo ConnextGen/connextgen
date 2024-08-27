@@ -1,11 +1,11 @@
 import { Box, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import FormTextField from './FormTextField';
 import Dropdown from './Dropdown';
-import styles from './Form.module.css';
-
 import { validateEmail, validatePassword, requireField } from '../../utils/validationUtils';
 import { signup } from '../../api';
+import styles from './Form.module.css';
 
 const SignUpForm = () => {
     const formik = useFormik({
@@ -64,7 +64,7 @@ const SignUpForm = () => {
                     <FormTextField header='Confirm Password' identifier='confirmPassword' type='password' formik={formik}/>
                 </div>
                 <div className={styles.button}>
-                    <Button id={styles.signUpButton} variant='contained' type='submit'>Sign Up</Button>
+                    <Button id={styles.signUpButton} component={Link} to='/login' variant='contained' type='submit'>Sign Up</Button>
                     <h3>Already have an account? <a href='login'>Log In</a></h3>
                 </div>
             </form>
