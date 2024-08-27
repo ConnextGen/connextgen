@@ -25,10 +25,17 @@ const Dropdown = ({ header, identifier, options, formik }) => {
                         },
                       
                         '& .MuiSelect-select': {
+                            padding: '1.3vh 0.8vw',
                             backgroundColor: 'rgba(233, 237, 239, 0.5)',
                             fontFamily: 'Quicksand, sans-serif',
                             color: '#294C60',
                         },
+                        '@media (max-width: 768px)': {
+                            '.MuiSelect-select': {
+                                padding: '1vh 3vw',
+                                fontSize: '3.5vw',
+                            },
+                        }
                     }}
                 >
                     {options.map((option) => (

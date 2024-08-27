@@ -46,7 +46,7 @@ const FormTextField = ({ header, identifier, type, formik }) => {
                     },
                   
                     '& .MuiInputBase-root': {
-                        height: '5.5vh',
+                        height: '5vh',
                         backgroundColor: 'rgba(233, 237, 239, 0.5)',
                         fontFamily: 'Quicksand, sans-serif',
                         color: '#294C60',
@@ -55,6 +55,12 @@ const FormTextField = ({ header, identifier, type, formik }) => {
                     '.MuiFormHelperText-root': {
                         fontFamily: 'Quicksand, sans-serif',
                         margin: '0',
+                    },
+                    '@media (max-width: 768px)': {
+                        '& .MuiInputBase-root': {
+                            height: '4vh',
+                            fontSize: '3.5vw',
+                        },
                     }
                 }}
             />

@@ -63,3 +63,24 @@
   border-radius: 30px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .fields {
+    padding: 0;
+    width: 60vw;
+  }
+
+  .field h3 {
+    font-size: 4vw;
+  }
+
+  .button h3 {
+    font-size: 4vw;
+  }
+
+  #logInButton, #signUpButton {
+    padding: 1vh 15vw;
+    font-size: 4.5vw;
+    border-radius: 20px;
+  }
+}
