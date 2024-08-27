@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    padding: 1vh 4vw;
+    padding: 1.3vh 4vw;
 }
 
 .nav div {
@@ -32,6 +32,8 @@
 }
 
 .nav a {
+    display: flex;
+    align-items: center;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.15vw;
     font-weight: 600;
@@ -43,8 +45,9 @@
 
 .arrow {
     position: relative;
-    top: 1px;
-    left: 0.1vw;
+    bottom: 0.1vh;
+    left: 0.5vw;
+    width: 1.15vw;
     opacity: 0.75;
     transition: color 0.1s ease-in-out;
 }

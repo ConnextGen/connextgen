@@ -7,12 +7,12 @@ const NavigationBar = () => {
         <div className={styles.background}>
             <div className={styles.nav}>
                 <div>
-                    <a href="/"><img src={logo} className={styles.logo} alt='logo'></img></a>
+                    <a href='/'><img src={logo} className={styles.logo} alt='logo'></img></a>
                     <a href="/team">Team</a>
                     <a target='_blank' rel='noreferrer' href='https://docs.google.com/forms/d/e/1FAIpQLSc1znrRftbxtVVQRtDC03t6fnKH9o1jaMchdc3U16Xl9sk_Cw/viewform?usp=sf_link'>
                         Join <Arrow className={styles.arrow} />
                     </a>
-                    <a href="mailto:connextgenproject@gmail.com">
+                    <a href='mailto:connextgenproject@gmail.com'>
                         Contact <Arrow className={styles.arrow} />
                     </a>
                 </div>
