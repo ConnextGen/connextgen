@@ -42,7 +42,7 @@ const Home = () => {
             <div className={styles.background}>
                 <img className={styles.waveTop} src={Wave3} alt='wave3'></img>
                 <div className={styles.aspects}>
-                    <div className={styles.aspect}>
+                    <div className={[styles.aspect, styles.leftAspect].join(' ')}>
                         <div>
                             <h1>Online Course</h1>
                             <p>Utilizing ConnextGen’s online course, students will build crucial professional skills not taught in schools, such as building resumes, preparing for interviews, writing cover letters, and more.</p>
@@ -53,7 +53,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className={styles.aspects}>
-                    <div className={styles.aspect}>
+                    <div className={[styles.aspect, styles.rightAspect].join(' ')}>
                         <div>
                             <img src={Networking} alt='networking'></img>
                         </div>
@@ -64,7 +64,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className={styles.aspects}>
-                    <div className={styles.aspect}>
+                    <div className={[styles.aspect, styles.leftAspect].join(' ')}>
                         <div>
                             <h1>In-School Clubs</h1>
                             <p>Through clubs, students will gain access to the online course and networking platform. During club meetings, students will also able to receive mentoring from members of the ConnextGen team.</p>
@@ -74,7 +74,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className={styles.aspects}>
+                <div className={[styles.aspect, styles.rightAspect].join(' ')}>
                     <div className={styles.aspect}>
                         <div>
                             <img src={Speakers} alt='speakers'></img>

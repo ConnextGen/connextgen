@@ -90,6 +90,8 @@
     .pane h1 {
         font-size: calc(0.7rem + 1.4vw);
     }
+
+    .leftAspect
     
 }
 
@@ -114,7 +116,7 @@
 .mission p {
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #294c60;
     text-align: center;
     line-height: 1.4;
@@ -141,10 +143,11 @@
     justify-content: space-between;
     margin: 2vh auto;
     width: 85vw;
+    gap: 6vw;
 }
 
 .aspect > div {
-    flex: 1;
+    /* flex: 1; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -178,7 +181,7 @@
 .aspect p {
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
-    font-size: 1.8em;
+    font-size: 1.5em;
     color: rgba(255, 255, 255, 0.75);
     text-align: center;
     line-height: 1.2;
@@ -186,7 +189,8 @@
 }
 
 .aspect img {
-    width: 13vw;
+    width: calc(80px + 15vw);
+    padding: 4vw;
 }
 
 .waveTop {
