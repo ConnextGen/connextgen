@@ -28,12 +28,10 @@
 }
 
 .logo {
-    height: 4vw;
+    height: 7vh;
 }
 
 .nav a {
-    display: flex;
-    align-items: center;
     font-family: 'Quicksand', sans-serif;
     font-size: 2vh;
     font-weight: 600;
@@ -45,8 +43,8 @@
 
 .arrow {
     position: relative;
-    bottom: 0.1vh;
-    left: 0.5vw;
+    top: 0.17vh;
+    left: 0.3vw;
     height: 2vh;
     opacity: 0.75;
     transition: color 0.1s ease-in-out;
@@ -72,4 +70,10 @@
     border-bottom: 3px solid rgba(245, 246, 254, 0.5);
     background-color: #36A9A1;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .hide {
+        display: none;
+    }
 }

@@ -29,8 +29,8 @@ const Team = () => {
                         <div className={styles.members}>
                             <Member name='Harry Zheng' image='https://via.placeholder.com/150' />
                             <Member name='Benjamin Reitz' image='https://via.placeholder.com/150' />
-                            <Member name='Eshaan Shah' title='CTO' image='https://via.placeholder.com/150' />
-                            <Member name='Christian Riddle' title='CTO' image='https://via.placeholder.com/150' />
+                            <Member name='Eshaan Shah' image='https://via.placeholder.com/150' />
+                            <Member name='Christian Riddle' image='https://via.placeholder.com/150' />
                         </div>
                     </div>
                     <div className={styles.division}>
