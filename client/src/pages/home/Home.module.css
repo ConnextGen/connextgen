@@ -52,7 +52,7 @@
 }
 
 .heroText {
-    width: 90%;
+    width: 85%;
 
     height: auto;
 }
@@ -71,7 +71,7 @@
     padding: 12px 20%;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
-    font-size: calc(10px + 2vw);
+    font-size: 1.5vw;
     text-decoration: none;
     background-color: #2A5B76d9;
     box-shadow: inset 0px 0px 15px rgba(132, 205, 246, 0.4);
@@ -238,40 +238,59 @@ small screen
     .pane {
         width: 80%;
     }
+    
     .heroImage {
         display: none;
     }
+    
     .pane h1 {
         font-size: calc(0.7rem + 1.4vw);
     }
+    
     .background {
         gap: 20px;
     }
+    
     .aspect {
         gap: 0;
     }
+    
     .leftAspect {
         flex-direction: column-reverse;
     }
+    
     .rightAspect {
         flex-direction: column;
     }
+
     .aspect img {
         padding: 0;
         margin-top: -5px;
         margin-bottom: -20px
     }
+    
     .aspectDescription {
         padding-top: 5px !important;
     }
+    
     .aspectIcon {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
+    
     .aspect {
         margin: 0 auto;
     }
+    
     .aspects {
         padding: 0;
+    }
+
+    #signUpButton, #helpButton {
+        font-size: max(12px, 2vw);
+    }
+
+    .pane h1 {
+        text-align: center;
     }
 }
