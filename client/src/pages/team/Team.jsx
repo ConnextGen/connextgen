@@ -2,6 +2,16 @@ import { useEffect } from 'react';
 import NavigationBar from '../../components/nav/NavigationBar';
 import Member from '../../components/team/Member';
 import Armaan from '../../assets/images/team/armaan.jpg';
+import Sid from '../../assets/images/team/sid.jpg';
+import Harry from '../../assets/images/team/harry.png';
+import Eeshan from '../../assets/images/team/eeshan.jpg';
+import Christian from '../../assets/images/team/christian.jpg';
+import Ronan from '../../assets/images/team/ronan.jpg';
+import Abhikhya from '../../assets/images/team/abhikhya.jpg';
+import An from '../../assets/images/team/an.jpg';
+import Rohan from '../../assets/images/team/rohan.jpg';
+import Daniel from '../../assets/images/team/daniel.jpg';
+import Jasmin from '../../assets/images/team/jasmin.jpg';
 import Footer from '../../components/footer/Footer';
 import styles from './Team.module.css';
 
@@ -20,38 +30,39 @@ const Team = () => {
                         <h2>Core Team</h2>
                         <div className={styles.members}>
                             <Member name='Armaan Priyadarshan' title='CEO' image={Armaan} />
-                            <Member name='Sidharth Subbiah' title='CMO' image='https://via.placeholder.com/150' />
+                            <Member name='Sidharth Subbiah' title='CMO' image={Sid} />
                             <Member name='Jacob Jiang' title='CTO' image='https://via.placeholder.com/150' />
                         </div>
                     </div>
                     <div className={styles.division}>
                         <h2>Outreach Team</h2>
                         <div className={styles.members}>
-                            <Member name='Harry Zheng' image='https://via.placeholder.com/150' />
+                            <Member name='Harry Zheng' image={Harry} />
                             <Member name='Benjamin Reitz' image='https://via.placeholder.com/150' />
-                            <Member name='Eshaan Shah' image='https://via.placeholder.com/150' />
-                            <Member name='Christian Riddle' image='https://via.placeholder.com/150' />
+                            <Member name='Eshaan Shah' image={Eeshan} />
+                            <Member name='Christian Riddle' image={Christian} />
+                            <Member name='Ronan Pigeaud' image={Ronan} />
                         </div>
                     </div>
                     <div className={styles.division}>
                         <h2>Fundraising Team</h2>
                         <div className={styles.members}>
-                            <Member name='Abhikhya Sonti' image='https://via.placeholder.com/150' />
-                            <Member name='An Tran' image='https://via.placeholder.com/150' />
+                            <Member name='Abhikhya Sonti' image={Abhikhya} />
+                            <Member name='An Tran' image={An} />
                         </div>
                     </div>
                     <div className={styles.division}>
                         <h2>Curriculum Team</h2>
                         <div className={styles.members}>
-                            <Member name='Rohan Sarikonda' image='https://via.placeholder.com/150' />
-                            <Member name='Daniel Shi' image='https://via.placeholder.com/150' />
+                            <Member name='Rohan Sarikonda' image={Rohan} />
+                            <Member name='Daniel Shi' image={Daniel} />
                         </div>
                     </div>
                     <div className={styles.division}>
                         <h2>Social Media Team</h2>
                         <div className={styles.members}>
                             <Member name='Shivani Gupta' image='https://via.placeholder.com/150' />
-                            <Member name='Jasmin Bella' image='https://via.placeholder.com/150' />
+                            <Member name='Jasmin Bella' image={Jasmin} />
                         </div>
                     </div>
                 </div>
