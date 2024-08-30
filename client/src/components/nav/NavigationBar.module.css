@@ -34,6 +34,7 @@
 .nav a {
     display: flex;
     align-items: center;
+    text-align: center;
     font-family: 'Quicksand', sans-serif;
     font-size: 2vh;
     font-weight: 600;

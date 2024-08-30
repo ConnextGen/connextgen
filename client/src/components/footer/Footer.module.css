@@ -2,13 +2,21 @@
 
 .background {
     background: linear-gradient(180deg, rgba(90, 170, 166, 0.95) 0%, rgba(76, 128, 153, 0.95) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
 }
 
 .wave {
     width: 100vw;
+    min-width: 900px;
+    /* margin-left: min(calc(50vw - 450px), 0px);
+    margin-right: min(calc(50vw - 450px), 0px); */
     height: auto;
-    position: absolute;
+    /* position: absolute; */
     margin-top: -1px;
+    
 }
 
 .footer {
@@ -17,23 +25,26 @@
     align-items: center;
     justify-content: center;
     gap: 1vh;
-    padding: 7vw 0 3vh;
+    padding: max(7vw, 63px) 0 3vh;
+    margin-top: min(-14vw, -127.5px);
 }
 
 .logo {
     width: 6vw;
+    min-width: 54px;
     filter: drop-shadow(0px 1px 35px rgba(34, 81, 102, 0.7));
 }
 
 .icon {
     width: 4vw;
+    min-width: 36px;
     margin: 0 -0.3vw;
 }
 
 .footer p {
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
-    font-size: 1.5vw;
+    font-size: max(1.5vw, 12.5px);
     color: white;
     margin-top: -0.5vh;
 }

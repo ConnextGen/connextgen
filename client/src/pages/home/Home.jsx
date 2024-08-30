@@ -43,21 +43,21 @@ const Home = () => {
                 <img className={styles.waveTop} src={Wave3} alt='wave3'></img>
                 <div className={styles.aspects}>
                     <div className={[styles.aspect, styles.leftAspect].join(' ')}>
-                        <div>
+                        <div class={styles.aspectDescription}>
                             <h1>Online Course</h1>
                             <p>Utilizing ConnextGen’s online course, students will build crucial professional skills not taught in schools, such as building resumes, preparing for interviews, writing cover letters, and more.</p>
                         </div>
-                        <div>
+                        <div class={styles.aspectIcon}>
                             <img src={Course} alt='course'></img>
                         </div>
                     </div>
                 </div>
                 <div className={styles.aspects}>
                     <div className={[styles.aspect, styles.rightAspect].join(' ')}>
-                        <div>
+                        <div class={styles.aspectIcon}>
                             <img src={Networking} alt='networking'></img>
                         </div>
-                        <div>
+                        <div class={styles.aspectDescription}>
                             <h1>Student Networking</h1>
                             <p>Students will be able to connect with other peers and parents in ConnextGen that have similar interests and fields of expertise, allowing them to share opportunities and collaborate.</p>
                         </div>
@@ -65,21 +65,21 @@ const Home = () => {
                 </div>
                 <div className={styles.aspects}>
                     <div className={[styles.aspect, styles.leftAspect].join(' ')}>
-                        <div>
+                        <div class={styles.aspectDescription}>
                             <h1>In-School Clubs</h1>
                             <p>Through clubs, students will gain access to the online course and networking platform. During club meetings, students will also able to receive mentoring from members of the ConnextGen team.</p>
                         </div>
-                        <div>
+                        <div class={styles.aspectIcon}>
                             <img src={Clubs} alt='clubs'></img>
                         </div>
                     </div>
                 </div>
-                <div className={[styles.aspect, styles.rightAspect].join(' ')}>
-                    <div className={styles.aspect}>
-                        <div>
+                <div className={styles.aspects}>
+                    <div className={[styles.aspect, styles.rightAspect].join(' ')}>
+                        <div class={styles.aspectIcon}>
                             <img src={Speakers} alt='speakers'></img>
                         </div>
-                        <div>
+                        <div class={styles.aspectDescription}>
                             <h1>Professional Speakers</h1>
                             <p>Students will be able to connect with other peers and parents in ConnextGen that have similar interests and fields of expertise, allowing them to share opportunities and collaborate.</p>
                         </div>

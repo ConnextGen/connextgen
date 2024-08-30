@@ -52,7 +52,7 @@
 }
 
 .heroText {
-    width: 75%;
+    width: 90%;
 
     height: auto;
 }
@@ -71,28 +71,13 @@
     padding: 12px 20%;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
-    font-size: 2vw;
+    font-size: calc(10px + 2vw);
     text-decoration: none;
     background-color: #2A5B76d9;
     box-shadow: inset 0px 0px 15px rgba(132, 205, 246, 0.4);
     color: white;
     border-radius: 100px;
     cursor: pointer;
-}
-
-@media only screen and (max-width: 900px) {
-    .pane {
-        width: 80%;
-    }
-    .heroImage {
-        display: none;
-    }
-    .pane h1 {
-        font-size: calc(0.7rem + 1.4vw);
-    }
-
-    .leftAspect
-    
 }
 
 
@@ -111,6 +96,7 @@
     font-size: 4em;
     color: #294c60;
     margin: 5vh 0 0;
+    text-align: center;
 }
 
 .mission p {
@@ -127,6 +113,10 @@
 .background {
     background: linear-gradient(265.67deg, #56889F 7.04%, #6EB8B4 93.18%);
     z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 .aspects {
@@ -134,15 +124,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2vh 0;
+    padding: 1vh 0;
 }
 
 .aspect {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 2vh auto;
-    width: 85vw;
+    margin: 1vh auto;
+    width: 77vw;
     gap: 6vw;
 }
 
@@ -191,6 +181,8 @@
 .aspect img {
     width: calc(80px + 15vw);
     padding: 4vw;
+    margin-top: -35px;
+    margin-bottom: -35px
 }
 
 .waveTop {
@@ -235,4 +227,51 @@
     line-height: 1.4;
     letter-spacing: 0.01em;
     margin: 0 0 2vh;
+}
+
+
+/*
+small screen
+*/
+
+@media only screen and (max-width: 900px) {
+    .pane {
+        width: 80%;
+    }
+    .heroImage {
+        display: none;
+    }
+    .pane h1 {
+        font-size: calc(0.7rem + 1.4vw);
+    }
+    .background {
+        gap: 20px;
+    }
+    .aspect {
+        gap: 0;
+    }
+    .leftAspect {
+        flex-direction: column-reverse;
+    }
+    .rightAspect {
+        flex-direction: column;
+    }
+    .aspect img {
+        padding: 0;
+        margin-top: -5px;
+        margin-bottom: -20px
+    }
+    .aspectDescription {
+        padding-top: 5px !important;
+    }
+    .aspectIcon {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .aspect {
+        margin: 0 auto;
+    }
+    .aspects {
+        padding: 0;
+    }
 }
