@@ -5,7 +5,9 @@ const Member = ({ name, title, image }) => {
         <div className={styles.member}>
             <h3>{name}</h3>
             {title && <p>{title}</p>}
-            <img src={image} alt={name}></img>
+            <div className={styles.avatarContainer}>
+                <img src={image} alt={name}></img>
+            </div>
         </div>
     );
 }
