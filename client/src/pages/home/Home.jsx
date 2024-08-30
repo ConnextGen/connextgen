@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link'
 import NavigationBar from '../../components/nav/NavigationBar';
 import Footer from '../../components/footer/Footer';
 import Logo from '../../assets/images/icons/logo.png';
@@ -27,18 +28,18 @@ const Home = () => {
                     <div className={styles.pane}>
                         <img className={styles.heroText}src={Logo2} alt='logo2'></img>
                         <h1>Enabling high school students to gain professional experience.</h1>
-                        <Button id={styles.signUpButton} component={Link} to='/#/signup' variant='contained'>Sign Up</Button>
+                        <Button id={styles.signUpButton} component={Link} to='/signup' variant='contained'>Sign Up</Button>
                     </div>
                     <div className={styles.heroImage}>
                         <img src={Logo} alt='logo' className={styles.logo}></img>
                     </div>
                 </div>
             </div>
-            <a href="#mission" className={styles.arrowContainer}>
+            <HashLink to='/#mission' className={styles.arrowContainer}>
                 <div className={styles.arrow}></div>
                 <div className={styles.arrow}></div>
                 <div className={styles.arrow}></div>
-            </a>
+            </HashLink>
             <div className={styles.mission} id='mission'>
                 <img className={styles.waveTop} src={Wave2} alt='wave2'></img>
                 <h1>Our Mission</h1>
