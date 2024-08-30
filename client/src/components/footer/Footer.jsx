@@ -18,7 +18,7 @@ const Footer = () => {
                         <img src={linkedin} alt='linkedin' className={styles.icon}></img>
                     </a>
                 </div>
-                <p>©2024 ConnextGen</p>
+                <p>connextgenproject@gmail.com</p>
             </div>
         </div>
     );

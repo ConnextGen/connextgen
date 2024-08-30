@@ -34,7 +34,12 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className={styles.mission}>
+            <a href="#mission" className={styles.arrowContainer}>
+                <div className={styles.arrow}></div>
+                <div className={styles.arrow}></div>
+                <div className={styles.arrow}></div>
+            </a>
+            <div className={styles.mission} id='mission'>
                 <img className={styles.waveTop} src={Wave2} alt='wave2'></img>
                 <h1>Our Mission</h1>
                 <p>ConnextGen empowers high school students to gain professional experience by providing a comprehensive platform for skills development, networking, and opportunity discovery. We aim to demystify the process of findings jobs and internships for every student.</p>
