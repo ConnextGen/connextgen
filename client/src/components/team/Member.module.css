@@ -38,6 +38,7 @@
   border-radius: 50%;
   width: 80%;
   height: auto;
+  aspect-ratio: 1 / 1;
 }
 
 @media (max-width: 768px) {
