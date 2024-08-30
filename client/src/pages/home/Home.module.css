@@ -5,6 +5,13 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    margin: 0;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
 .landing {
     display: flex;
     justify-content: center;
