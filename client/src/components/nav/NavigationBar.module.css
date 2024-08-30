@@ -10,7 +10,7 @@
     background-image: url('../../assets/images/backgrounds/wave.png');
     background-position: bottom;
     background-repeat: no-repeat;
-    background-size: 104% 120%;
+    background-size: max(1300px, 104%) 120%;
 
     z-index: 1;
 }
@@ -74,8 +74,11 @@
     color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .hide {
         display: none;
     }
+    /* .background {
+        background-size:  120%;
+    } */
 }
