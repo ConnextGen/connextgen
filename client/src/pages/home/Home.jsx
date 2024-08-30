@@ -27,14 +27,19 @@ const Home = () => {
                     <div className={styles.pane}>
                         <img className={styles.heroText}src={Logo2} alt='logo2'></img>
                         <h1>Enabling high school students to gain professional experience.</h1>
-                        <Button id={styles.signUpButton} component={Link} to='/signup' variant='contained'>Sign Up</Button>
+                        <Button id={styles.signUpButton} component={Link} to='/#/signup' variant='contained'>Sign Up</Button>
                     </div>
                     <div className={styles.heroImage}>
                         <img src={Logo} alt='logo' className={styles.logo}></img>
                     </div>
                 </div>
             </div>
-            <div className={styles.mission}>
+            <a href="#mission" className={styles.arrowContainer}>
+                <div className={styles.arrow}></div>
+                <div className={styles.arrow}></div>
+                <div className={styles.arrow}></div>
+            </a>
+            <div className={styles.mission} id='mission'>
                 <img className={styles.waveTop} src={Wave2} alt='wave2'></img>
                 <h1>Our Mission</h1>
                 <p>ConnextGen empowers high school students to gain professional experience by providing a comprehensive platform for skills development, networking, and opportunity discovery. We aim to demystify the process of findings jobs and internships for every student.</p>
