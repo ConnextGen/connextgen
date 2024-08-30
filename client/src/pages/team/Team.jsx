@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import NavigationBar from '../../components/nav/NavigationBar';
 import Member from '../../components/team/Member';
+import Logo from '../../assets/images/icons/logo.png';
 import Armaan from '../../assets/images/team/armaan.jpg';
 import Sid from '../../assets/images/team/sid.jpg';
 import Harry from '../../assets/images/team/harry.png';
@@ -31,14 +32,14 @@ const Team = () => {
                         <div className={styles.members}>
                             <Member name='Armaan Priyadarshan' title='CEO' image={Armaan} />
                             <Member name='Sidharth Subbiah' title='CMO' image={Sid} />
-                            <Member name='Jacob Jiang' title='CTO' image='https://via.placeholder.com/150' />
+                            <Member name='Jacob Jiang' title='CTO' image={Logo} />
                         </div>
                     </div>
                     <div className={styles.division}>
                         <h2>Outreach Team</h2>
                         <div className={styles.members}>
                             <Member name='Harry Zheng' image={Harry} />
-                            <Member name='Benjamin Reitz' image='https://via.placeholder.com/150' />
+                            <Member name='Benjamin Reitz' image={Logo} />
                             <Member name='Eshaan Shah' image={Eeshan} />
                             <Member name='Christian Riddle' image={Christian} />
                             <Member name='Ronan Pigeaud' image={Ronan} />
@@ -61,7 +62,7 @@ const Team = () => {
                     <div className={styles.division}>
                         <h2>Social Media Team</h2>
                         <div className={styles.members}>
-                            <Member name='Shivani Gupta' image='https://via.placeholder.com/150' />
+                            <Member name='Shivani Gupta' image={Logo} />
                             <Member name='Jasmin Bella' image={Jasmin} />
                         </div>
                     </div>

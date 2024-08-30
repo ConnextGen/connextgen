@@ -27,7 +27,7 @@ const Home = () => {
                     <div className={styles.pane}>
                         <img className={styles.heroText}src={Logo2} alt='logo2'></img>
                         <h1>Enabling high school students to gain professional experience.</h1>
-                        <Button id={styles.signUpButton} component={Link} to='/signup' variant='contained'>Sign Up</Button>
+                        <Button id={styles.signUpButton} component={Link} to='/#/signup' variant='contained'>Sign Up</Button>
                     </div>
                     <div className={styles.heroImage}>
                         <img src={Logo} alt='logo' className={styles.logo}></img>
