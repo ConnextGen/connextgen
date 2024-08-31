@@ -5,6 +5,7 @@ import Logo from '../../assets/images/icons/logo.png';
 import Armaan from '../../assets/images/team/armaan.jpg';
 import Sid from '../../assets/images/team/sid.jpg';
 import Harry from '../../assets/images/team/harry.png';
+import Ben from '../../assets/images/team/ben.jpg';
 import Eeshan from '../../assets/images/team/eeshan.jpg';
 import Christian from '../../assets/images/team/christian.jpg';
 import Ronan from '../../assets/images/team/ronan.jpg';
@@ -39,7 +40,7 @@ const Team = () => {
                         <h2>Outreach Team</h2>
                         <div className={styles.members}>
                             <Member name='Harry Zheng' image={Harry} />
-                            <Member name='Benjamin Reitz' image={Logo} />
+                            <Member name='Benjamin Reitz' image={Ben} />
                             <Member name='Eshaan Shah' image={Eeshan} />
                             <Member name='Christian Riddle' image={Christian} />
                             <Member name='Ronan Pigeaud' image={Ronan} />
