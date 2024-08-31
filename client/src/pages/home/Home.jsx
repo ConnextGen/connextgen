@@ -43,7 +43,7 @@ const Home = () => {
             <div className={styles.mission} id='mission'>
                 <img className={styles.waveTop} src={Wave2} alt='wave2'></img>
                 <h1>Our Mission</h1>
-                <p>ConnextGen empowers high school students to gain professional experience by providing a comprehensive platform for skills development, networking, and opportunity discovery. We aim to demystify the process of findings jobs and internships for every student.</p>
+                <p>ConnextGen empowers high school students to gain professional experience by providing a comprehensive platform for skills development, networking, and opportunity discovery. We aim to demystify the process of finding jobs and internships for every student.</p>
             </div>
             <div className={styles.background}>
                 <img className={styles.waveTop} src={Wave3} alt='wave3'></img>

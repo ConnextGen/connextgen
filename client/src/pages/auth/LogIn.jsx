@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import LoginForm from '../../components/form/LoginForm';
 import styles from './Authentication.module.css';
 
-const Login = () => {
+const LogIn = () => {
     useEffect(() => {
         document.title = 'Log In | ConnextGen';
     }, []);
@@ -17,4 +17,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default LogIn;
