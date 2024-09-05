@@ -16,10 +16,10 @@ const NavigationBar = () => {
                         Contact <Arrow className={styles.arrow} />
                     </a>
                 </div>
-                <div>
+                {/* <div>
                     <a href='/#/login'>Log In</a>
                     <a href='/#/signup' className={styles.signUp}>Sign Up</a>
-                </div>
+                </div> */}
             </div>
         </div>
     );
