@@ -28,7 +28,7 @@ const Home = () => {
                     <div className={styles.pane}>
                         <img className={styles.heroText}src={Logo2} alt='logo2'></img>
                         <h1>Enabling high school students to gain professional experience.</h1>
-                        {/* <Button id={styles.signUpButton} component={Link} to='/signup' variant='contained'>Sign Up</Button> */}
+                        <Button id={styles.signUpButton} component={Link} to='https://docs.google.com/forms/d/e/1FAIpQLSc1znrRftbxtVVQRtDC03t6fnKH9o1jaMchdc3U16Xl9sk_Cw/viewform?usp=sf_link' href='https://docs.google.com/forms/d/e/1FAIpQLSc1znrRftbxtVVQRtDC03t6fnKH9o1jaMchdc3U16Xl9sk_Cw/viewform?usp=sf_link' variant='contained'>Sign Up</Button>
                     </div>
                     <div className={styles.heroImage}>
                         <img src={Logo} alt='logo' className={styles.logo}></img>
