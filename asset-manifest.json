@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b321ca28.css",
-    "main.js": "/static/js/main.577cb530.js",
+    "main.js": "/static/js/main.65408a7e.js",
     "static/js/453.258b012d.chunk.js": "/static/js/453.258b012d.chunk.js",
     "static/media/harry.png": "/static/media/harry.179f0fcec3beebd7f42f.png",
     "static/media/armaan.jpg": "/static/media/armaan.c4c7cfe6f2854de26e5a.jpg",
@@ -15,6 +15,7 @@
     "static/media/jasmin.jpg": "/static/media/jasmin.93bd00b2d11c9b0b83eb.jpg",
     "static/media/clubs.png": "/static/media/clubs.f1c0a5bd3966de5d3e4f.png",
     "static/media/course.png": "/static/media/course.2a443c838436c894149b.png",
+    "static/media/ben.jpg": "/static/media/ben.62287abb8614a6f6556a.jpg",
     "static/media/wave4.png": "/static/media/wave4.51602a650729cbf742d6.png",
     "static/media/wave2.png": "/static/media/wave2.bd34035298baa9045e14.png",
     "static/media/logo.png": "/static/media/logo.72d35ad98fe0a479edd6.png",
@@ -30,11 +31,11 @@
     "index.html": "/index.html",
     "static/media/arrow.svg": "/static/media/arrow.a4982037c57bd514600c0b913650cd45.svg",
     "main.b321ca28.css.map": "/static/css/main.b321ca28.css.map",
-    "main.577cb530.js.map": "/static/js/main.577cb530.js.map",
+    "main.65408a7e.js.map": "/static/js/main.65408a7e.js.map",
     "453.258b012d.chunk.js.map": "/static/js/453.258b012d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b321ca28.css",
-    "static/js/main.577cb530.js"
+    "static/js/main.65408a7e.js"
   ]
 }
