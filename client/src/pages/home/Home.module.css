@@ -84,7 +84,7 @@ html {
 
 .arrowContainer {
     display: block;
-    width: 5wv;
+    width: 100px;
     height: 100px;
     position: relative;
     top: 50%;
@@ -117,7 +117,7 @@ html {
       transform-origin: bottom right;
       background: #294c60;
       width: 4px;
-      height: 50px;
+      height: 40px;
       border-radius: 10px;
       transform: translate(-50%, -50%) rotateZ(-45deg);
     }
