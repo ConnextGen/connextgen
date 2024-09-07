@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import NavigationBar from '../../components/nav/NavigationBar';
-import Member from '../../components/team/Member';
+import Member from '../../components/member/Member';
 import Logo from '../../assets/images/icons/logo.png';
 import Armaan from '../../assets/images/team/armaan.jpg';
 import Sid from '../../assets/images/team/sid.jpg';

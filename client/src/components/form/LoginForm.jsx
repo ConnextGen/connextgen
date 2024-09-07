@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { validateEmail, validatePassword } from '../../utils/validationUtils';
 import FormTextField from './FormTextField';
-import { login } from '../../api';
+import { logIn } from '../../api';
 import styles from './Form.module.css';
 
 const LoginForm = () => {
@@ -23,7 +23,7 @@ const LoginForm = () => {
         onSubmit: (values, { setSubmitting, setFieldError }) => {
             setTimeout(() => {
                 console.log(values.email, values.password);
-                login(values.email, values.password).then(response => {
+                logIn(values.email, values.password).then(response => {
                     alert(JSON.stringify(response, null, "\n"));
                 }).catch(err => {
                     console.log(err.response.status);

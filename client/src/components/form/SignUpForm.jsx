@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import FormTextField from './FormTextField';
 import Dropdown from './Dropdown';
 import { validateEmail, validatePassword, requireField } from '../../utils/validationUtils';
-import { signup } from '../../api';
+import { signUp } from '../../api';
 import styles from './Form.module.css';
 
 const SignUpForm = () => {
@@ -38,7 +38,7 @@ const SignUpForm = () => {
         onSubmit: (values, { setSubmitting, setFieldError }) => {
             setTimeout(() => {
                 console.log(values.email, values.password);
-                signup(values.firstName, values.lastName, values.school, values.email, values.password).then(response => {
+                signUp(values.firstName, values.lastName, values.school, values.email, values.password).then(response => {
                     alert(JSON.stringify(response, null, '\n'));
                 }).catch(err => {
                     console.log(err.response.status);

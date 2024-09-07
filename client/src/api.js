@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-export async function login(email, password) {
+export async function logIn(email, password) {
     return (await axios.post('http://localhost:3001/api/users/login', { email, password })).data;
 }
 
-export async function signup(firstName, lastName, school, email, password) {
+export async function signUp(firstName, lastName, school, email, password) {
     return (await axios.post('http://localhost:3001/api/users', { firstName, lastName, school, email, password })).data;
 }
 
