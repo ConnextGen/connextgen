@@ -84,8 +84,8 @@ html {
 
 .arrowContainer {
     display: block;
-    width: 100px;
-    height: 100px;
+    width: 5vw;
+    height: 8vh;
     position: relative;
     top: 50%;
     left: 50%;
@@ -311,6 +311,13 @@ small screen
     .pane h1 {
         font-size: calc(0.7rem + 1.5vw);
         text-align: center;
+    }
+
+    .arrow {
+        &:before, &:after {
+            width: 3px;
+            height: 30px;
+        }
     }
 
     .mission h1 {
