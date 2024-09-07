@@ -1,13 +1,17 @@
 import { Box, Button } from '@mui/material';
-import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { Link,useNavigate } from 'react-router-dom';
 import FormTextField from './FormTextField';
 import Dropdown from './Dropdown';
 import { validateEmail, validatePassword, requireField } from '../../utils/validationUtils';
 import { signUp } from '../../api';
+import { useAuth } from '../../context/AuthContext';
 import styles from './Form.module.css';
 
 const SignUpForm = () => {
+    const { logIn } = useAuth();
+    const navigate = useNavigate();
+
     const formik = useFormik({
         initialValues: {
             firstName: '',
@@ -35,16 +39,18 @@ const SignUpForm = () => {
 
             return errors;
         },
-        onSubmit: (values, { setSubmitting, setFieldError }) => {
-            setTimeout(() => {
-                console.log(values.email, values.password);
-                signUp(values.firstName, values.lastName, values.school, values.email, values.password).then(response => {
-                    alert(JSON.stringify(response, null, '\n'));
-                }).catch(err => {
-                    console.log(err.response.status);
-                });
+        onSubmit: async (values, { setSubmitting, setFieldError }) => {
+            try {
+                const response = await signUp(values.firstName, values.lastName, values.school, values.email, values.password);
+                console.log('Signed up:', response);
+                await logIn(values.email, values.password);
+                navigate('/');
+            } catch (err) {
+                console.error(err);
+                setFieldError('confirmPassword', 'Sign-up failed');
+            } finally {
                 setSubmitting(false);
-            }, 400);
+            }
         }
     });
 
@@ -64,8 +70,8 @@ const SignUpForm = () => {
                     <FormTextField header='Confirm Password' identifier='confirmPassword' type='password' formik={formik}/>
                 </div>
                 <div className={styles.button}>
-                    <Button id={styles.signUpButton} component={Link} to='/login' variant='contained' type='submit'>Sign Up</Button>
-                    <h3>Already have an account? <a href='login'>Log In</a></h3>
+                    <Button id={styles.signUpButton} variant='contained' type='submit'>Sign Up</Button>
+                    <h3>Already have an account? <Link to='/login'>Log In</Link></h3>
                 </div>
             </form>
 

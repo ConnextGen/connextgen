@@ -1,12 +1,15 @@
 import { Button } from '@mui/material';
-import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { Link, useNavigate } from 'react-router-dom';
 import { validateEmail, validatePassword } from '../../utils/validationUtils';
 import FormTextField from './FormTextField';
-import { logIn } from '../../api';
+import { useAuth } from '../../context/AuthContext';
 import styles from './Form.module.css';
 
 const LoginForm = () => {
+    const { logIn } = useAuth();
+    const navigate = useNavigate();
+    
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -20,20 +23,21 @@ const LoginForm = () => {
 
             return errors;
         },
-        onSubmit: (values, { setSubmitting, setFieldError }) => {
-            setTimeout(() => {
-                console.log(values.email, values.password);
-                logIn(values.email, values.password).then(response => {
-                    alert(JSON.stringify(response, null, "\n"));
-                }).catch(err => {
-                    console.log(err.response.status);
-                    setFieldError('email', 'Incorrect email or password');
-                    setFieldError('password', 'Incorrect email or password');
-                });
+        onSubmit: async (values, { setSubmitting, setFieldError }) => {
+            try {
+                const response = await logIn(values.email, values.password);
+                console.log('Logged in:', response);
+                navigate('/');
+            } catch (err) {
+                console.error(err);
+                setFieldError('email', 'Incorrect email or password');
+                setFieldError('password', 'Incorrect email or password');
+            } finally {
                 setSubmitting(false);
-            }, 400);
+            }
         }
     });
+
     return (
         <form className={styles.form} onSubmit={formik.handleSubmit}>
             <div className={styles.fields}>
@@ -41,8 +45,8 @@ const LoginForm = () => {
                 <FormTextField header='Password' identifier='password' type='password' formik={formik}/>
             </div>
             <div className={styles.button}>
-                <Button id={styles.logInButton} component={Link} to='/'variant='contained' type='submit'>Log In</Button>
-                <h3>Don't have an account? <a href='signup'>Sign Up</a></h3>
+                <Button id={styles.logInButton} variant='contained' type='submit'>Log In</Button>
+                <h3>Don't have an account? <Link to='/signup'>Sign Up</Link></h3>
             </div>
         </form>
     );
