@@ -15,6 +15,17 @@
     z-index: 1;
 }
 
+.solidBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    background: linear-gradient(85.67deg, rgba(98, 174, 169, 0.8) 6.93%, rgba(76, 128, 153, 0.8) 93.07%);
+    
+    z-index: 1;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;

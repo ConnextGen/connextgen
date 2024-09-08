@@ -16,15 +16,15 @@ const authReducer = (state, action) => {
 
 const AuthProvider = ({ children }) => {
     const [state, dispatch] = useReducer(authReducer, {
-        user: JSON.parse(localStorage.getItem('user')) || null,
-        isAuthenticated: localStorage.getItem('isAuthenticated') === 'true'
+        user: JSON.parse(sessionStorage.getItem('user')) || null,
+        isAuthenticated: sessionStorage.getItem('isAuthenticated') === 'true'
     });
 
     const logIn = async (email, password) => {
         try {
             const user = await logInAPI(email, password);
-            localStorage.setItem('user', JSON.stringify(user));
-            localStorage.setItem('isAuthenticated', 'true');
+            sessionStorage.setItem('user', JSON.stringify(user));
+            sessionStorage.setItem('isAuthenticated', 'true');
             dispatch({ type: 'LOGIN', payload: user });
             return user;
         } catch (error) {
@@ -33,8 +33,8 @@ const AuthProvider = ({ children }) => {
     };
 
     const logOut = () => {
-        localStorage.removeItem('user');
-        localStorage.removeItem('isAuthenticated');
+        sessionStorage.removeItem('user');
+        sessionStorage.removeItem('isAuthenticated');
         dispatch({ type: 'LOGOUT' });
     };
 

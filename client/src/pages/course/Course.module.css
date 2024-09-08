@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+.background {
+    display: flex;
+    padding-top: 10vh;
+    background: linear-gradient(180deg, #031736 30%, #0C2441 100%);
+}
+
+.panel {
+    position: fixed;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 8vh 0 8vh 4vw;
+    gap: 1vh;
+}
+
+.panel div {
+    display: flex;
+    align-items: center;
+    padding: 0 1.5vw;
+    gap: 1vw;
+}
+
+.panel a {
+    text-decoration: none;
+    width: 100%;
+    padding: 2vh 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.panel a:hover {
+    background: rgba(44, 154, 147, 0.05);
+    border-left: 5px solid #4C8099;
+    font-weight: 600;
+}
+
+.panel img {
+    width: 2vw;
+    height: auto;
+}
+
+.content {
+    width: 80%;
+    min-height: 80vh;
+    margin-left: 25%;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 4vw;
+    gap: 2vh;
+}
+
+.keepLearning {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 2.5em;
+    background: linear-gradient(232.09deg, rgba(76, 128, 153, 0.5) 28.11%, rgba(94, 197, 191, 0.5) 71.89%), #F5F6FE;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
