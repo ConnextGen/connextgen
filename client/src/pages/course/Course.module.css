@@ -40,8 +40,6 @@ html {
 
 .panel a:hover {
     background: rgba(44, 154, 147, 0.05);
-    border-left: 5px solid #4C8099;
-    font-weight: 600;
 }
 
 .active {

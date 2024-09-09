@@ -29,16 +29,18 @@
 
 .progress {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .progress p {
     position: absolute;
-    top: 0.5vh;
-    left: 1vw;
     font-family: 'Quicksand', sans-serif;
-    font-size: 1.5em;
+    font-size: 2vh;
     color: #e2f3f3;
 }
+
 .percentage {
-    font-size: 0.75em;
+    font-size: 1.5vh;
 }
