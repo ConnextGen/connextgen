@@ -44,19 +44,28 @@ html {
     font-weight: 600;
 }
 
+.active {
+    background: rgba(44, 154, 147, 0.1);
+    border-left: 5px solid #4C8099;
+    font-weight: 600;
+}
+
 .panel img {
     width: 2vw;
     height: auto;
 }
 
 .content {
-    width: 80%;
-    min-height: 80vh;
+    width: 65%;
     margin-left: 25%;
     display: flex;
     flex-direction: column;
     padding: 5vh 4vw;
     gap: 2vh;
+}
+
+.progress {
+    min-height: 40vh;
 }
 
 .keepLearning {
@@ -67,4 +76,54 @@ html {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.link {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #5ec5ef;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.course {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh 4vw;
+}
+
+.title {
+    margin: 0;
+    text-align: center;
+    font-family: 'DM Serif Text', serif;
+    font-weight: 500;
+    font-size: 4em;
+    background: linear-gradient(232.09deg, rgba(76, 128, 153, 0.5) 28.11%, rgba(94, 197, 191, 0.5) 71.89%), #F5F6FE;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0px 0px 25px rgba(255, 255, 255, 0.35);;
+}
+
+.description {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 150%;
+    color: #f0f0f0;
+}
+
+.units {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 3vh;
+    margin-top: 2vh;
 }

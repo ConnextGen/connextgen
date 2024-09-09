@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.unit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1vh 4vw;
+    background: rgba(3, 23, 54, 0.01);
+    box-shadow: 0px 0px 30px rgba(129, 192, 189, 0.15);
+    border-radius: 35px;
+}
+
+.unit h1 {
+    font-family: 'DM Serif Text', serif;
+    font-size: 3em;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #e2f3f3;
+}
+
+.unitNumber {
+    background: linear-gradient(90deg, #4C8099 0%, #2C9A93 34.25%), #0C2441;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.progress {
+    position: relative;
+}
+
+.progress p {
+    position: absolute;
+    top: 0.5vh;
+    left: 1vw;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5em;
+    color: #e2f3f3;
+}
+.percentage {
+    font-size: 0.75em;
+}

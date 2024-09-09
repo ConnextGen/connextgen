@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link'
+import { useAuth } from '../../context/AuthContext';
 import NavigationBar from '../../components/nav/NavigationBar';
 import Footer from '../../components/footer/Footer';
 import Logo from '../../assets/images/icons/logo.png';
@@ -16,6 +17,8 @@ import Wave4 from '../../assets/images/backgrounds/wave4.png';
 import styles from './Home.module.css';
 
 const Home = () => {
+    const { state } = useAuth();
+
     useEffect(() => {
         document.title = 'Home | ConnextGen';
     }, []);
@@ -28,7 +31,7 @@ const Home = () => {
                     <div className={styles.pane}>
                         <img className={styles.heroText}src={Logo2} alt='logo2'></img>
                         <h1>Enabling high school students to gain professional experience.</h1>
-                        <Button id={styles.signUpButton} component={Link} to='/signup' href='https://docs.google.com/forms/d/e/1FAIpQLSc1znrRftbxtVVQRtDC03t6fnKH9o1jaMchdc3U16Xl9sk_Cw/viewform?usp=sf_link' variant='contained'>Sign Up</Button>
+                        {state.isAuthenticated ? <Button id={styles.signUpButton} component={Link} to='/course' variant='contained'>View Course</Button> : <Button id={styles.signUpButton} component={Link} to='/signup' variant='contained'>Sign Up</Button>}
                     </div>
                     <div className={styles.heroImage}>
                         <img src={Logo} alt='logo' className={styles.logo}></img>
