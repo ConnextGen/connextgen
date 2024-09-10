@@ -1,20 +1,31 @@
 import { useEffect, useState, useRef } from 'react';
 import { HashLink } from 'react-router-hash-link';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import NavigationBar from '../../components/nav/NavigationBar';
 import ProgressIcon from '../../assets/images/icons/progress.png';
 import CourseIcon from '../../assets/images/icons/course.png';
-import styles from './Course.module.css';
 import LatestUnit from '../../components/unit/LatestUnit';
 import Unit from '../../components/unit/Unit';
+import styles from './Course.module.css';
+
 
 const Course = () => {
+    const { state } = useAuth();
+    const navigate = useNavigate();
     const [activeSection, setActiveSection] = useState('');
     const progressRef = useRef(null);
     const courseRef = useRef(null);
+    const lessonNames = ['Lesson Name', 'Lesson Name', 'Lesson Name', 'Lesson Name', 'Lesson Name', 'Lesson Name', 'Lesson Name'];
 
     useEffect(() => {
         document.title = 'Course | ConnextGen';
     }, []);
+
+    useEffect(() => {
+        if (!state.isAuthenticated) navigate('/login');
+    }, [state, navigate]);
+
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -31,12 +42,15 @@ const Course = () => {
             }
         );
 
-        if (progressRef.current) observer.observe(progressRef.current);
-        if (courseRef.current) observer.observe(courseRef.current);
+        const progressElement = progressRef.current;
+        const courseElement = courseRef.current;
+
+        if (progressElement) observer.observe(progressElement);
+        if (courseElement) observer.observe(courseElement);
 
         return () => {
-            if (progressRef.current) observer.unobserve(progressRef.current);
-            if (courseRef.current) observer.unobserve(courseRef.current);
+            if (progressElement) observer.unobserve(progressElement);
+            if (courseElement) observer.unobserve(courseElement);
         };
     }, []);
 
@@ -67,13 +81,7 @@ const Course = () => {
                 <div className={styles.content}>
                     <div id="progress" ref={progressRef} className={styles.progress}>
                         <h1 className={styles.keepLearning}>Keep learning</h1>
-                        <LatestUnit
-                            unitNumber={1}
-                            unitName="Unit Name"
-                            lessonNumber={1}
-                            lessonName="Lesson Name"
-                            percentage={50}
-                        />
+                        <LatestUnit unitNumber={1} unitName="Unit Name" lessonNumber={1} lessonName="Lesson Name" percentage={50} />
                         <HashLink to="#units" className={styles.link}>
                             View full syllabus &gt;
                         </HashLink>
@@ -88,10 +96,10 @@ const Course = () => {
                             fermentum sit amet.
                         </p>
                         <div id="units" className={styles.units}>
-                            <Unit unitNumber={1} unitName="Unit Name" percentage={50} />
-                            <Unit unitNumber={2} unitName="Unit Name" percentage={50} />
-                            <Unit unitNumber={3} unitName="Unit Name" percentage={50} />
-                            <Unit unitNumber={4} unitName="Unit Name" percentage={50} />
+                            <Unit unitNumber={1} unitName="Unit Name" percentage={50} lessons={lessonNames} />
+                            <Unit unitNumber={2} unitName="Unit Name" percentage={50} lessons={lessonNames} />
+                            <Unit unitNumber={3} unitName="Unit Name" percentage={50} lessons={lessonNames} />
+                            <Unit unitNumber={4} unitName="Unit Name" percentage={50} lessons={lessonNames} />
                         </div>
                     </div>
                 </div>

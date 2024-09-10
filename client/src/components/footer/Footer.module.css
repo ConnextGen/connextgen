@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-.background {
+.container {
     background: linear-gradient(180deg, rgba(90, 170, 166, 0.95) 0%, rgba(76, 128, 153, 0.95) 100%);
     display: flex;
     flex-direction: column;

@@ -6,7 +6,7 @@ import styles from './Footer.module.css';
 
 const Footer = () => {
     return (
-        <div className={styles.background}>
+        <div className={styles.container}>
             <img src={Wave5} alt='wave5' className={styles.wave}></img>
             <div className={styles.footer}>
                 <img src={Logo} alt='logo' className={styles.logo}></img>
