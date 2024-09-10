@@ -9,7 +9,7 @@ import Logo from '../../assets/images/icons/logo.png';
 import Logo2 from '../../assets/images/icons/logo2.png';
 import Wave2 from '../../assets/images/backgrounds/wave2.png';
 import Wave3 from '../../assets/images/backgrounds/wave3.png';
-import Course from '../../assets/images/icons/course.png';
+import Course from '../../assets/images/icons/onlinecourse.png';
 import Networking from '../../assets/images/icons/networking.png';
 import Clubs from '../../assets/images/icons/clubs.png';
 import Speakers from '../../assets/images/icons/speakers.png';
