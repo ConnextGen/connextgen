@@ -5,7 +5,7 @@ import Logo from '../../assets/images/icons/logo.png';
 import Profile from '../../assets/images/icons/profile.png';
 import styles from './NavigationBar.module.css';
 
-const NavigationBar = ({ isSolidBackground, isLesson }) => {
+const NavigationBar = ({ isSolidBackground, isLesson, toggleSidePanel }) => {
     const { state, logOut } = useAuth();
     
     return (
@@ -17,7 +17,7 @@ const NavigationBar = ({ isSolidBackground, isLesson }) => {
                     {
                         isLesson ? (
                             <>
-                                <HashLink>Unit</HashLink>
+                                <HashLink onClick={toggleSidePanel}>Unit</HashLink>
                             </>
                         ) : (
                             <>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import styles from './LatestUnit.module.css';
 
 const LatestUnit = ({ unitNumber, unitName, lessonNumber, lessonName, percentage }) => { 
@@ -13,7 +13,7 @@ const LatestUnit = ({ unitNumber, unitName, lessonNumber, lessonName, percentage
                     <div className={styles.bar} style={{ width: `${percentage}%` }}>{percentage}%</div>
                 </div>
                 <div className={styles.resume}>
-                    <Link to=''>Resume &gt;</Link>
+                    <HashLink to='/course/unit/lesson'>Resume &gt;</HashLink>
                 </div>
             </div>
         </div>
