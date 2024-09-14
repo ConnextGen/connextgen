@@ -3,7 +3,7 @@ const asyncHandler = require("express-async-handler");
 
 const { getSessionData } = require("../services/sessionServices");
 
-const User = require("../schemas/User");
+const User = require("../models/User");
 
 const protect = asyncHandler(async (req, res, next) => {
 

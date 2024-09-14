@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-/* db connection and setup *///
+/* db connection and setup */
 
 const mongodbURI = process.env.MONGODB_URI;
 

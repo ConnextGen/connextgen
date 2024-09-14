@@ -64,7 +64,7 @@ const SignUpForm = () => {
                         <FormTextField header='First Name' identifier='firstName' formik={formik}/>
                         <FormTextField header='Last Name' identifier='lastName' formik={formik}/>
                     </div>
-                    <Dropdown header='Select School' identifier='school' options={['School 1', 'School 2', 'School 3']} formik={formik}/>
+                    <Dropdown header='Select School' identifier='school' options={['Algonquin Regional High School', 'Bromfield High School', 'Grafton High School', 'Hopkinton High School', 'Mass Academy', 'Nipmuc Regional High School', 'North Quincy High School', 'Notre Dame Academy', 'Saint John\'s High School', 'Shrewsbury High School', 'Westborough High School', 'Worcester Academy']} formik={formik}/>
                     <FormTextField header='Email' identifier='email' formik={formik}/>
                     <FormTextField header='Create Password' identifier='password' type='password' formik={formik}/>
                     <FormTextField header='Confirm Password' identifier='confirmPassword' type='password' formik={formik}/>
