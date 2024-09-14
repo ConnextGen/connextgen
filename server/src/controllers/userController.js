@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 
 const { storeSessionData } = require("../services/sessionServices");
 
-const User = require("../schemas/User");
+const User = require("../models/User");
 
 // @desc    Register user
 // @route   POST /api/users
