@@ -1,32 +1,36 @@
-const AWS = require('aws-sdk');
+import { S3Client, ListObjectsV2Command } from './s3Client.js';
 
 /* s3 querying */
 
-AWS.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: process.env.AWS_REGION
+const s3 = new S3Client({
+    region: process.env.AWS_REGION,
+    credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+    }
 });
 
-const s3 = new AWS.S3();
+const listS3Objects = async (bucketName) => {
+    const command = new ListObjectsV2Command({
+        Bucket: bucketName
+      });
 
-const listS3Objects = async (bucketName, prefix) => {
-    const params = {
-        Bucket: bucketName,
-        Prefix: prefix
-    };
+      let s3Objects = [];
+      let isTruncated = true;
 
-    let s3Objects = [];
-    let data;
-    
-    do {
-        data = await s3.listObjectsV2(params).promise();
-        console.log(data);
-        s3Objects = s3Objects.concat(data.Contents);
-        params.ContinuationToken = data.NextContinuationToken;
-    } while (data.IsTruncated);
-
-    return s3Objects;
+      try {
+        while (isTruncated) {    
+            const { Contents, IsTruncated, NextContinuationToken } = await s3.send(command);
+            s3Objects = s3Objects.concat(Contents);
+            isTruncated = IsTruncated;
+            command.input.ContinuationToken = NextContinuationToken;
+        }
+        
+        return s3Objects;
+      } catch (error) {
+        console.error('Error listing S3 objects:', error);
+        throw error;
+      }
 };
 
 const getS3FileContent = async (bucketName, key) => {
@@ -34,7 +38,7 @@ const getS3FileContent = async (bucketName, key) => {
         Bucket: bucketName,
         Key: key
     };
-    const data = await s3.getObject(params).promise();
+    const data = await s3.getObject(params);
     return data.Body.toString('utf-8');
 };
 
