@@ -1,23 +1,20 @@
 import { useState } from 'react';
 import { CircularProgress } from '@mui/material';
 import { HashLink } from 'react-router-hash-link';
+import { formatTitle } from '../../utils/formattingUtils';
 import styles from './Unit.module.css';
 
-const Unit = ({ unitNumber, unitName, percentage, lessons }) => {
+const Unit = ({ unit, percentage }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const handleUnitClick = () => {
         setIsExpanded(!isExpanded);
     };
 
-    const handleLinkClick = (event) => {
-        event.stopPropagation();
-    };
-
     return (
         <div className={styles.container} onClick={handleUnitClick}>
             <div className={styles.unit}>
-                <h1><span className={styles.unitNumber}>Unit {unitNumber}:</span> {unitName}</h1>
+                <h1><span className={styles.unitNumber}>Unit {unit.order}:</span> {formatTitle(unit.title)}</h1>
                 <div className={styles.progress}>
                     <p>{percentage}<span className={styles.percentage}>%</span></p>
                     <CircularProgress
@@ -30,12 +27,10 @@ const Unit = ({ unitNumber, unitName, percentage, lessons }) => {
                 </div>
             </div>
             <div className={`${styles.lessons} ${isExpanded ? styles.expanded : ''}`}>
-                {lessons.map((lesson, index) => (
-                    <HashLink to='/course/unit/lesson' className={styles.lesson} onClick={handleLinkClick}>
-                        <div>
-                            <span>Lesson {index + 1}</span>
-                            <p>{lesson}</p>
-                        </div>
+                {unit.lessons.map((lesson) => (
+                    <HashLink to={`/course/${unit.title}/${lesson.title}`} className={styles.lesson} state={{ unit, lesson }}>
+                        <span>Lesson {lesson.order}</span>
+                        <p>{formatTitle(lesson.title)}</p>
                     </HashLink>
                 ))}
             </div>

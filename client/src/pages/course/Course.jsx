@@ -53,7 +53,7 @@ const Course = () => {
             },
             {
                 root: null,
-                threshold: 0.8,
+                threshold: 0.7,
             }
         );
 
@@ -102,16 +102,13 @@ const Course = () => {
                         </HashLink>
                     </div>
                     <div id="course" ref={courseRef} className={styles.course}>
-                        <h1 className={styles.title}>{course.title}</h1>
-                        <p className={styles.description}>{course.description}</p>
+                        <h1 className={styles.title}>{course?.title || 'Loading...'}</h1>
+                        <p className={styles.description}>{course?.description || 'Loading...'}</p>
                         <div id="units" className={styles.units}>
-                            {course?.units?.map((unit, index) => (
+                            {course?.units?.map((unit) => (
                                 <Unit 
-                                    key={index} 
-                                    unitNumber={index + 1}
-                                    unitName={unit.title}
+                                    unit={unit}
                                     percentage={50}
-                                    lessons={unit.lessons.map(lesson => lesson.title)}
                                 />
                             ))}
                         </div>
