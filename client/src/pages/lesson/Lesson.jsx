@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getLesson } from '../../api';
+import { getLesson, getUnit } from '../../api';
 import { AnimatePresence, motion } from 'framer-motion';
 import { formatTitle } from '../../utils/formattingUtils';
 import styles from './Lesson.module.css'
@@ -15,6 +15,8 @@ const Lesson = () => {
     const navigate = useNavigate();
     const { unit, lesson } = useParams();
     const [lessonContent, setLessonContent] = useState(null);
+    
+    const [lessons, setLessons] = useState([]);
 
     const [isSidePanelVisible, setSidePanelVisible] = useState(false);
     const sidePanelRef = useRef(null);
@@ -28,16 +30,19 @@ const Lesson = () => {
     }, [state, navigate]);
 
     useEffect(() => {
-        const fetchLesson = async () => {
+        const fetchLessons = async () => {
             try {
                 const lessonData = await getLesson(unit, lesson);
                 setLessonContent(lessonData);
+
+                const unitData = await getUnit(unit);
+                setLessons(unitData.lessons);
             } catch (error) {
                 console.error('Failed to fetch lesson:', error);
             }
         };
 
-        fetchLesson();
+        fetchLessons();
     }, [unit, lesson]);
     
     useEffect(() => {
@@ -77,8 +82,8 @@ const Lesson = () => {
                 {isSidePanelVisible && (
                     <motion.div ref={sidePanelRef}>
                         <LessonNavigationBar 
-                            unitName={'Unit Name'} 
-                            lessons={['Lesson Name', 'Lesson Name', 'Lesson Name', 'Lesson Name', 'Lesson Name', 'Lesson Name', 'Lesson Name']} 
+                            unitName={formatTitle(unit)} 
+                            lessons={lessons.map(lesson => formatTitle(lesson.title))} 
                             isVisible={isSidePanelVisible} 
                         />
                     </motion.div>

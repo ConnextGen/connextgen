@@ -16,6 +16,10 @@ export async function getCourse() {
     return (await axios.get('http://localhost:3001/api/course')).data;
 }
 
+export async function getUnit(unit) {
+    return (await axios.get(`http://localhost:3001/api/course/${unit}`)).data;
+}
+
 export async function getLesson(unit, lesson) {
     return (await axios.get(`http://localhost:3001/api/course/${unit}/${lesson}`)).data;
 }

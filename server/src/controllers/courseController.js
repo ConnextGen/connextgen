@@ -42,6 +42,26 @@ const getCourse = asyncHandler(async (req, res) => {
     }
 });
 
+// @desc    Get unit with lessons
+// @route   GET /api/course/:unit
+// @access  Public
+const getUnit = asyncHandler(async (req, res) => {
+    const { unit } = req.params;
+
+    try {
+        const foundUnit = await Unit.findOne({ title: unit }).populate('lessons');
+
+        if (!foundUnit) {
+            return res.status(404).json({ message: 'Unit not found' });
+        }
+
+        res.status(200).json(foundUnit);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching unit', err });
+    }
+});
+
+
 // @desc    Get lesson content
 // @route   GET /api/course/:unit/:lesson
 // @access  Public
@@ -66,5 +86,6 @@ const getLesson = asyncHandler(async (req, res) => {
 
 module.exports = {
     getCourse,
+    getUnit,
     getLesson
 };
