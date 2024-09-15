@@ -5,7 +5,7 @@ import FormTextField from './FormTextField';
 import Dropdown from './Dropdown';
 import { validateEmail, validatePassword, requireField } from '../../utils/validationUtils';
 import { signUp } from '../../api';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import styles from './Form.module.css';
 
 const SignUpForm = () => {

@@ -1,6 +1,6 @@
 import { ReactComponent as Arrow } from '../../assets/images/icons/arrow.svg';
 import { HashLink } from 'react-router-hash-link';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import Logo from '../../assets/images/icons/logo.png';
 import Profile from '../../assets/images/icons/profile.png';
 import styles from './NavigationBar.module.css';

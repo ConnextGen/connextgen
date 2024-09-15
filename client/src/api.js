@@ -11,3 +11,11 @@ export async function signUp(firstName, lastName, school, email, password) {
 export async function getUser(id) {
     return (await axios.get(`http://localhost:3001/api/users/${id}`).then(res => res.data)).data;
 }
+
+export async function getCourse() {
+    return (await axios.get('http://localhost:3001/api/course')).data;
+}
+
+export async function getLesson(unit, lesson) {
+    return (await axios.get(`http://localhost:3001/api/course/${unit}/${lesson}`)).data;
+}

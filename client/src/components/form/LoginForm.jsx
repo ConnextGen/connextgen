@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
 import { validateEmail, validatePassword } from '../../utils/validationUtils';
 import FormTextField from './FormTextField';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import styles from './Form.module.css';
 
 const LoginForm = () => {

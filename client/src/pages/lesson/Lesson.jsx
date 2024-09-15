@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import { AnimatePresence, motion } from 'framer-motion';
 import styles from './Lesson.module.css'
 import NavigationBar from '../../components/nav/NavigationBar';

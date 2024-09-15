@@ -17,7 +17,8 @@ const { syncCurriculum } = require("./services/courseService.js");
 connectMongoDB();
 connectRedisClient();
 
-/* sync curriculum */
+/* todo: migrate to init script
+  sync curriculum */
 syncCurriculum();
 
 /* port */
