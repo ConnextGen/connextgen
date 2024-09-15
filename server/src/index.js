@@ -11,9 +11,14 @@ const cookieParser = require("cookie-parser");
 const { connectMongoDB } = require("./db/mongoDB.js");
 const { connectRedisClient } = require("./db/redisClient.js");
 
+const { syncCurriculum } = require("./services/curriculumService.js");
+
 /* connect dbs */
 connectMongoDB();
 connectRedisClient();
+
+/* sync curriculum */
+syncCurriculum();
 
 /* port */
 const port = process.env.PORT;
