@@ -1,7 +1,7 @@
+const { getObject } = require('../services/courseService');
 const asyncHandler = require("express-async-handler");
 const Course = require('../models/Course');
 const Unit = require('../models/Unit');
-const Lesson = require('../models/Lesson');
 
 // @desc    Get course details
 // @route   GET /api/course
@@ -46,24 +46,19 @@ const getCourse = asyncHandler(async (req, res) => {
 // @route   GET /api/course/:unit/:lesson
 // @access  Public
 const getLesson = asyncHandler(async (req, res) => {
-    const { unitName, lessonName } = req.params;
+    const { unit, lesson } = req.params;
 
     try {
-        const unit = await Unit.findOne({ title: unitName }).populate({
+        const foundUnit = await Unit.findOne({ title: unit }).populate({
             path: 'lessons',
-            match: { title: lessonName }
+            match: { title: lesson }
         });
 
-        if (!unit || !unit.lessons.length) {
+        if (!foundUnit || !foundUnit.lessons.length) {
             return res.status(404).json({ message: 'Lesson not found' });
         }
 
-        const lesson = {
-            title: unit.lessons[0].title,
-            content: await getS3Object(unit.lessons[0].key)
-        };
-
-        res.status(200).json(lesson);
+        res.status(200).json(await getObject(foundUnit.lessons[0].key));
     } catch (err) {
         res.status(500).json({ message: 'Error fetching lesson content', err });
     }
