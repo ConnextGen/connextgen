@@ -5,9 +5,9 @@ export async function logIn(email, password) {
 }
 
 export async function signUp(firstName, lastName, school, email, password) {
-    return (await axios.post('http://localhost:3001/api/users', { firstName, lastName, school, email, password })).data;
+    return (await axios.post('http://localhost:3001/api/users/signup', { firstName, lastName, school, email, password })).data;
 }
 
 export async function getUser(id) {
-    return (await axios.get(`http://some-api.com/users/${id}`).then(res => res.data)).data;
+    return (await axios.get(`http://localhost:3001/api/users/${id}`).then(res => res.data)).data;
 }

@@ -9,7 +9,7 @@ const {
   getUser 
 } = require("../controllers/userController");
 
-router.post("/", registerUser);
+router.post("/signup", registerUser);
 router.post("/login", loginUser);
 router.get("/me", protect, getUser);
 

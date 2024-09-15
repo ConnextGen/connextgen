@@ -26,7 +26,6 @@ const Course = () => {
         if (!state.isAuthenticated) navigate('/login');
     }, [state, navigate]);
 
-
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {

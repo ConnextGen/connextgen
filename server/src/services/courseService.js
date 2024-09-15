@@ -67,6 +67,8 @@ const syncCurriculum = async () => {
     }
 
     const objects = await getObjects(bucketName);
+    let order = 1;
+
     for (const object of objects) {
         const key = object.Key;
         const parts = key.split('/').filter(part => part);
@@ -86,7 +88,8 @@ const syncCurriculum = async () => {
             if (!unit) {
                 unit = await Unit.create({
                     title: unitTitle,
-                    lessons: []
+                    lessons: [],
+                    order: order++
                 });
                 course.units.push(unit._id);
                 await course.save();
@@ -94,7 +97,8 @@ const syncCurriculum = async () => {
 
             const lesson = await Lesson.create({
                 title: lessonTitle,
-                key
+                key,
+                order: unit.lessons.length + 1,
             });
 
             unit.lessons.push(lesson._id);
