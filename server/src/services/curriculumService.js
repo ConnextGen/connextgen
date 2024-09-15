@@ -70,7 +70,6 @@ const syncCurriculum = async () => {
     for (const object of objects) {
         const key = object.Key;
         const parts = key.split('/').filter(part => part);
-        console.log(parts);
 
         if (parts.length < 2) {
             continue;
@@ -78,8 +77,6 @@ const syncCurriculum = async () => {
 
         const unitTitle = parts[0];
         const lessonTitle = parts[1].split('.')[0];
-
-        console.log(key, unitTitle, lessonTitle);
 
         const lesson = await Lesson.findOne({ key });
 
@@ -103,7 +100,6 @@ const syncCurriculum = async () => {
             unit.lessons.push(lesson._id);
             await unit.save();
         }
-        console.log('Lesson synced: ', lessonTitle);
     }
 
     console.log('Curriculum synced.');
