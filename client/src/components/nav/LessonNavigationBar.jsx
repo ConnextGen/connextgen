@@ -1,8 +1,13 @@
 import { motion } from 'framer-motion';
 import { HashLink } from 'react-router-hash-link';
+import { formatTitle } from '../../utils/formattingUtils';
 import styles from './LessonNavigationBar.module.css';
 
-const LessonNavigationBar = ({ unitName, lessons, isVisible }) => {
+const LessonNavigationBar = ({ unit, lessons, isVisible, close }) => {
+    const handleClick = () => {
+        close();
+    }
+
     return (
         <motion.div
             className={styles.container}
@@ -12,13 +17,13 @@ const LessonNavigationBar = ({ unitName, lessons, isVisible }) => {
             transition={{ type: 'tween', duration: 0.5 }}
         >
             <div className={styles.nav}>
-                <h1>{unitName}</h1>
+                <h1>{formatTitle(unit)}</h1>
                 <div className={styles.lessons}>
                     {lessons.map((lesson, index) => (
-                        <HashLink to='/course/unit/lesson' className={styles.lesson} key={index}>
+                        <HashLink to={`/course/${unit}/${lesson}`} className={styles.lesson} onClick={handleClick}>
                             <div>
                                 <span>Lesson {index + 1}</span>
-                                <p>{lesson}</p>
+                                <p>{formatTitle(lesson)}</p>
                             </div>
                         </HashLink>
                     ))}

@@ -82,9 +82,10 @@ const Lesson = () => {
                 {isSidePanelVisible && (
                     <motion.div ref={sidePanelRef}>
                         <LessonNavigationBar 
-                            unitName={formatTitle(unit)} 
-                            lessons={lessons.map(lesson => formatTitle(lesson.title))} 
+                            unit={unit} 
+                            lessons={lessons.map(lesson => lesson.title)} 
                             isVisible={isSidePanelVisible} 
+                            close={() => setSidePanelVisible(false)}
                         />
                     </motion.div>
                 )}
