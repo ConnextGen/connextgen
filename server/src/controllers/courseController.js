@@ -19,8 +19,7 @@ const getCourse = asyncHandler(async (req, res) => {
             });
         
         if (!course) {
-            res.status(404);
-            throw new Error('Course not found.');
+            res.status(404).json({ message: 'Course not found' });
         }
 
         const courseData = {
@@ -52,7 +51,7 @@ const getUnit = asyncHandler(async (req, res) => {
         const foundUnit = await Unit.findOne({ title: unit }).populate('lessons');
 
         if (!foundUnit) {
-            return res.status(404).json({ message: 'Unit not found' });
+            res.status(404).json({ message: 'Unit not found' });
         }
 
         res.status(200).json(foundUnit);
@@ -84,8 +83,117 @@ const getLesson = asyncHandler(async (req, res) => {
     }
 });
 
+
+// @desc    Get previous lesson
+// @route   GET /api/course/:unit/:lesson/previous
+// @access  Public
+const getPreviousLesson = async (req, res) => {
+    const { unit, lesson } = req.params;
+
+    try {
+        const currentUnit = await Unit.findOne({ title: unit }).populate({
+            path: 'lessons',
+            options: { sort: { order: 1 } }
+        });
+
+        if (!currentUnit) {
+            return res.status(404).json({ message: 'Unit not found' });
+        }
+
+        const currentLessonIndex = currentUnit.lessons.findIndex(lessonObj => lessonObj.title === lesson);
+
+        if (currentLessonIndex === -1) {
+            return res.status(404).json({ message: 'Lesson not found in this unit' });
+        }
+
+        if (currentLessonIndex > 0) {
+            return res.status(200).json({
+                unit: currentUnit.title,
+                lesson: currentUnit.lessons[currentLessonIndex - 1].title
+            });
+        } else {
+            const previousUnit = await Unit.findOne({ order: { $lt: currentUnit.order } }).sort({ order: -1 }).populate({
+                path: 'lessons',
+                options: { sort: { order: 1 } }
+            });
+
+            if (previousUnit && previousUnit.lessons.length > 0) {
+                return res.status(200).json({
+                    unit: previousUnit.title,
+                    lesson: previousUnit.lessons[previousUnit.lessons.length - 1].title
+                });
+            }
+        }
+
+        return res.status(200).json({
+            unit: null,
+            title: null
+        });
+
+    } catch (err) {
+        return res.status(500).json({ message: 'Error fetching previous lesson', error: err.message });
+    }
+};
+
+
+
+// @desc    Get next lesson
+// @route   GET /api/course/:unit/:lesson/next
+// @access  Public
+const getNextLesson = async (req, res) => {
+    const { unit, lesson } = req.params;
+
+    try {
+        const currentUnit = await Unit.findOne({ title: unit }).populate({
+            path: 'lessons',
+            options: { sort: { order: 1 } }
+        });
+
+        if (!currentUnit) {
+            return res.status(404).json({ message: 'Unit not found' });
+        }
+
+        const currentLessonIndex = currentUnit.lessons.findIndex(lessonObj => lessonObj.title === lesson);
+
+        if (currentLessonIndex === -1) {
+            return res.status(404).json({ message: 'Lesson not found in this unit' });
+        }
+
+        if (currentLessonIndex < currentUnit.lessons.length - 1) {
+            return res.status(200).json({
+                unit: currentUnit.title,
+                lesson: currentUnit.lessons[currentLessonIndex + 1].title
+            });
+        } else {
+            const nextUnit = await Unit.findOne({ order: { $gt: currentUnit.order } }).sort({ order: 1 }).populate({
+                path: 'lessons',
+                options: { sort: { order: 1 } }
+            });
+
+            if (nextUnit && nextUnit.lessons.length > 0) {
+                return res.status(200).json({
+                    unit: nextUnit.title,
+                    lesson: nextUnit.lessons[0].title
+                });
+            }
+        }
+
+        return res.status(200).json({
+            unit: null,
+            lesson: null
+        });
+
+    } catch (err) {
+        return res.status(500).json({ message: 'Error fetching next lesson', error: err.message });
+    }
+};
+
+
+
 module.exports = {
     getCourse,
     getUnit,
-    getLesson
+    getLesson,
+    getPreviousLesson,
+    getNextLesson
 };

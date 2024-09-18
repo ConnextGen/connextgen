@@ -90,7 +90,10 @@ const Lesson = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-            <LessonFooter />
+            <LessonFooter 
+                unit={unit} 
+                lesson={lesson}
+            />
         </>
     );
 }

@@ -23,3 +23,11 @@ export async function getUnit(unit) {
 export async function getLesson(unit, lesson) {
     return (await axios.get(`http://localhost:3001/api/course/${unit}/${lesson}`)).data;
 }
+
+export async function getPreviousLesson(unit, lesson) {
+    return (await axios.get(`http://localhost:3001/api/course/${unit}/${lesson}/previous`)).data;
+}
+
+export async function getNextLesson(unit, lesson) {
+    return (await axios.get(`http://localhost:3001/api/course/${unit}/${lesson}/next`)).data;
+}
