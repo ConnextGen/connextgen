@@ -28,7 +28,7 @@ const Unit = ({ unit, percentage }) => {
             </div>
             <div className={`${styles.lessons} ${isExpanded ? styles.expanded : ''}`}>
                 {unit.lessons.map((lesson) => (
-                    <HashLink to={`/course/${unit.title}/${lesson.title}`} className={styles.lesson} state={{ unit, lesson }}>
+                    <HashLink to={`/course/${unit.title}/${lesson.title}`} className={styles.lesson}>
                         <span>Lesson {lesson.order}</span>
                         <p>{formatTitle(lesson.title)}</p>
                     </HashLink>

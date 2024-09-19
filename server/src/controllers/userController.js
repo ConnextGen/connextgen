@@ -6,6 +6,8 @@ const cookieParser = require("cookie-parser");
 const { storeSessionData } = require("../services/sessionServices");
 
 const User = require("../models/User");
+const Unit = require("../models/Unit");
+
 
 // @desc    Register user
 // @route   POST /api/users
@@ -29,13 +31,22 @@ const registerUser = asyncHandler(async (req, res) => {
   // hash & salt password
   const hashedPassword = await bcrypt.hash(password, 10); // 10 round salt
 
+  // fetch all units and their lessons
+  const units = await Unit.find().populate('lessons');
+
+  // initialize user progress for each unit
+  const progress = units.map(unit => ({
+    unit: unit._id,
+    completedLessons: [],
+    percentageCompleted: 0
+  }));
+
   const newUser = await User.create({
     firstName,
     lastName,
     email,
     password: hashedPassword,
-    permission: "user",
-    courses: [],
+    progress
   });
 
   if (newUser) {
@@ -63,6 +74,7 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error("User data invalid.");
   }
 });
+
 
 // @desc    Login user
 // @route   POST /api/users/login
@@ -108,11 +120,67 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
+
 // @desc    Login user
 // @route   GET /api/users/me
 // @access  Public
 const getUser = asyncHandler(async (req, res) => {
   res.json({message: "get"});
+});
+
+
+// @desc    Get user progress and last visited unit/lesson
+// @route   GET /api/users/:userId/progress
+// @access  Private
+const getProgress = asyncHandler(async (req, res) => {
+  const { userId } = req.params;
+
+  // Find user and populate the progress, unit, and lesson details
+  const user = await User.findById(userId)
+    .populate('progress.unit')
+    .populate('progress.completedLessons')
+    .populate('lastVisited.unit')
+    .populate('lastVisited.lesson');
+
+  if (user) {
+    res.status(200).json({
+      progress: user.progress,
+      lastVisited: user.lastVisited
+    });
+  } else {
+    res.status(404);
+    throw new Error('User not found');
+  }
+});
+
+
+// @desc    Complete lesson
+// @route   POST /api/users/:unit/:lesson
+// @access  Public
+const completeLesson = asyncHandler(async (req, res) => {
+  const { unit, lesson } = req.params;
+  const { userId } = req.body;
+
+  // find user
+  const user = await User.findById(userId);
+
+  const currentUnit = await Unit.findOne({ title: unit }).populate('lessons');
+
+  const currentLesson = currentUnit.lessons.find(l => l.title === lesson)._id;
+  const totalLessons = currentUnit.lessons.length;
+
+  let progress = user.progress.find(p => p.unit.equals(currentUnit._id));
+
+  if (!progress.completedLessons.includes(currentLesson)) {
+    progress.completedLessons.push(currentLesson);
+    progress.percentage = Math.round(progress.completedLessons.length / totalLessons * 100);
+  }
+
+  user.lastVisited.unit = currentUnit._id;
+  user.lastVisited.lesson = currentLesson;
+
+  await user.save();
+  res.status(200).json({ message: 'Progress updated successfully', user });
 });
 
 
@@ -124,8 +192,11 @@ const generateSession = (userId) => {
   };
 }
 
+
 module.exports = {
   registerUser,
   loginUser,
   getUser,
+  getProgress,
+  completeLesson
 }

@@ -12,6 +12,14 @@ export async function getUser(id) {
     return (await axios.get(`http://localhost:3001/api/users/${id}`).then(res => res.data)).data;
 }
 
+export async function getProgress(id) {
+    return (await axios.get(`http://localhost:3001/api/users/${id}/progress`)).data;
+}
+
+export async function completeLesson(unit, lesson, id) {
+    return (await axios.post(`http://localhost:3001/api/users/${unit}/${lesson}`, { userId: id })).data;
+}
+
 export async function getCourse() {
     return (await axios.get('http://localhost:3001/api/course')).data;
 }

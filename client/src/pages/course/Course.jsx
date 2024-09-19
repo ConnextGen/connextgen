@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { getCourse } from '../../api';
+import { getCourse, getProgress } from '../../api';
 import NavigationBar from '../../components/nav/NavigationBar';
 import ProgressIcon from '../../assets/images/icons/progress.png';
 import CourseIcon from '../../assets/images/icons/course.png';
@@ -15,11 +15,10 @@ const Course = () => {
     const { state } = useAuth();
     const navigate = useNavigate();
     const [activeSection, setActiveSection] = useState('');
-
     const progressRef = useRef(null);
     const courseRef = useRef(null);
-
     const [course, setCourse] = useState(null);
+    const [progress, setProgress] = useState(null);
 
     useEffect(() => {
         document.title = 'Course | ConnextGen';
@@ -39,8 +38,19 @@ const Course = () => {
             }
         }
 
+        const fetchProgress = async () => {
+            try {
+                console.log(state.user._id);
+                const progress = await getProgress(state.user._id);
+                setProgress(progress);
+            } catch (error) {
+                console.error("Failed to fetch user progress:", error);
+            }
+        }
+
         fetchCourse();
-    }, []);
+        fetchProgress();
+    }, [state]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -96,7 +106,17 @@ const Course = () => {
                 <div className={styles.content}>
                     <div id="progress" ref={progressRef} className={styles.progress}>
                         <h1 className={styles.keepLearning}>Keep learning</h1>
-                        <LatestUnit unitNumber={1} unitName="Unit Name" lessonNumber={1} lessonName="Lesson Name" percentage={50} />
+                        {progress ? (
+                            <LatestUnit 
+                                unitNumber={progress.lastVisited.unit?.order}
+                                unitName={progress.lastVisited.unit?.title}
+                                lessonNumber={progress.lastVisited.lesson?.order}
+                                lessonName={progress.lastVisited.lesson?.title}
+                                percentage={progress.progress.find(p => p.unit._id === progress.lastVisited.unit?._id)?.percentage || 0}
+                            />
+                        ) : (
+                            <p className={styles.description}>Loading progress...</p>
+                        )}
                         <HashLink to="#units" className={styles.link}>
                             View full syllabus &gt;
                         </HashLink>
@@ -108,7 +128,7 @@ const Course = () => {
                             {course?.units?.map((unit) => (
                                 <Unit 
                                     unit={unit}
-                                    percentage={50}
+                                    percentage={progress.progress.find(p => p.unit.title === unit.title)?.percentage || 0}
                                 />
                             ))}
                         </div>

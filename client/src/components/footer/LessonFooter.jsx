@@ -27,17 +27,19 @@ const LessonFooter = ({ unit, lesson }) => {
         <div className={styles.container}>
             <div className={styles.footer}>
                 <HashLink 
-                    to={previousLesson ? `/course/${previousLesson.unit}/${previousLesson.lesson}` : '#'}
-                    className={previousLesson.unit ? '' : styles.disabled}
+                    to={previousLesson && previousLesson.unit ? `/course/${previousLesson.unit}/${previousLesson.lesson}` : '#'}
+                    className={previousLesson && previousLesson.unit ? '' : styles.disabled}
                 >
-                    {previousLesson.unit ? '< Previous' : ''}
+                    {previousLesson && previousLesson.unit ? '< Previous' : ''}
                 </HashLink>
-                <HashLink to={nextLesson ? `/course/${nextLesson.unit}/${nextLesson.lesson}` : '#'}>
-                    {nextLesson.unit ? 'Next >' : ''}
+                <HashLink 
+                    to={nextLesson && nextLesson.unit ? `/course/${nextLesson.unit}/${nextLesson.lesson}` : '#'}
+                >
+                    {nextLesson && nextLesson.unit ? 'Next >' : ''}
                 </HashLink>
             </div>
         </div>
-    );
+    );    
 }
 
 export default LessonFooter;

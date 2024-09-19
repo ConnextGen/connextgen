@@ -13,7 +13,7 @@ const LatestUnit = ({ unitNumber, unitName, lessonNumber, lessonName, percentage
                     <div className={styles.bar} style={{ width: `${percentage}%` }}>{percentage}%</div>
                 </div>
                 <div className={styles.resume}>
-                    <HashLink to='/course/unit/lesson'>Resume &gt;</HashLink>
+                    <HashLink to={`/course/${unitName}/${lessonName}`}>Resume &gt;</HashLink>
                 </div>
             </div>
         </div>

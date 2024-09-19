@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getLesson, getUnit } from '../../api';
+import { getLesson, getUnit, completeLesson } from '../../api';
 import { AnimatePresence, motion } from 'framer-motion';
 import { formatTitle } from '../../utils/formattingUtils';
 import styles from './Lesson.module.css'
@@ -44,6 +44,18 @@ const Lesson = () => {
 
         fetchLessons();
     }, [unit, lesson]);
+
+    useEffect(() => {
+        const handleLessonCompletion = async () => {
+            try {
+                await completeLesson(unit, lesson, state.user._id);
+            } catch (error) {
+                console.error('Failed to complete lesson:', error);
+            }
+        };
+
+        handleLessonCompletion();
+    }, [unit, lesson, state]);
     
     useEffect(() => {
         if (isSidePanelVisible) {
