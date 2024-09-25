@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://connextgen-server.vercel.app/';
+const url = 'https://connextgen-server.vercel.app';
 
 export async function logIn(email, password) {
     return (await axios.post(`${url}/api/users/login`, { email, password })).data;
