@@ -13,7 +13,7 @@ const NavigationBar = ({ isSolidBackground, isLesson, toggleSidePanel }) => {
             <div className={styles.nav}>
                 <div>
                     <HashLink to='/'><img src={Logo} className={styles.logo} alt='logo'></img></HashLink>
-                    {state.isAuthenticated ? <HashLink to='/course'>Course</HashLink> : null}
+                    {/* {state.isAuthenticated ? <HashLink to='/course'>Course</HashLink> : null}
                     {
                         isLesson ? (
                             <>
@@ -30,7 +30,14 @@ const NavigationBar = ({ isSolidBackground, isLesson, toggleSidePanel }) => {
                                 </HashLink>
                             </>
                         )
-                    }
+                    } */}
+                    <HashLink to='/team'>Team</HashLink>
+                    <HashLink to='https://docs.google.com/forms/d/e/1FAIpQLSc1znrRftbxtVVQRtDC03t6fnKH9o1jaMchdc3U16Xl9sk_Cw/viewform?usp=sf_link' target='_blank' rel='noreferrer' className={styles.hide}>
+                        Join <Arrow className={styles.arrow} />
+                    </HashLink>
+                    <HashLink to='mailto:connextgenproject@gmail.com' className={styles.hide}>
+                        Contact <Arrow className={styles.arrow} />
+                    </HashLink>
                 </div>
                 <div>
                     {state.isAuthenticated ? (
