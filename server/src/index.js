@@ -26,10 +26,7 @@ const port = process.env.PORT;
 
 const app = express();
 
-app.use(cors({
-  origin: 'https://connextgen-client.vercel.app',
-  credentials: true,
-}));
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIES_SECRET));
 
