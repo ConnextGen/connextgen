@@ -16,7 +16,7 @@ const NavigationBar = ({ isSolidBackground, isLesson, toggleSidePanel }) => {
                     {state.isAuthenticated ? <HashLink to='/course'>Course</HashLink> : null}
                     {
                         isLesson ? (
-                            <>
+                            <> 
                                 <HashLink onClick={toggleSidePanel}>Unit</HashLink>
                             </>
                         ) : (
