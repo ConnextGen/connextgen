@@ -108,10 +108,8 @@ const Course = () => {
                         <h1 className={styles.keepLearning}>Keep learning</h1>
                         {progress ? (
                             <LatestUnit 
-                                unitNumber={progress.lastVisited.unit?.order}
-                                unitName={progress.lastVisited.unit?.title}
-                                lessonNumber={progress.lastVisited.lesson?.order}
-                                lessonName={progress.lastVisited.lesson?.title}
+                                unit={progress.lastVisited.unit}
+                                lesson={progress.lastVisited.lesson}
                                 percentage={progress.progress.find(p => p.unit._id === progress.lastVisited.unit?._id)?.percentage || 0}
                             />
                         ) : (
@@ -128,7 +126,7 @@ const Course = () => {
                             {course?.units?.map((unit) => (
                                 <Unit 
                                     unit={unit}
-                                    percentage={progress.progress.find(p => p.unit.title === unit.title)?.percentage || 0}
+                                    percentage={progress?.progress?.find(p => p.unit.title === unit.title)?.percentage || 0}
                                 />
                             ))}
                         </div>

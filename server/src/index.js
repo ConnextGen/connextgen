@@ -27,7 +27,7 @@ const port = process.env.PORT;
 const app = express();
 
 app.use(cors({
-  origin: 'https://connextgen.vercel.app',
+  origin: 'http://localhost:3000' || 'https://connextgen.vercel.app',
   credentials: true,
 }));
 app.use(express.json());

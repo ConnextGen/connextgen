@@ -14,7 +14,7 @@ const Unit = ({ unit, percentage }) => {
     return (
         <div className={styles.container} onClick={handleUnitClick}>
             <div className={styles.unit}>
-                <h1><span className={styles.unitNumber}>Unit {unit.order}:</span> {formatTitle(unit.title)}</h1>
+                <h1><span className={styles.order}>Unit {unit.order}:</span> {formatTitle(unit.title)}</h1>
                 <div className={styles.progress}>
                     <p>{percentage}<span className={styles.percentage}>%</span></p>
                     <CircularProgress

@@ -41,12 +41,19 @@ const registerUser = asyncHandler(async (req, res) => {
     percentageCompleted: 0
   }));
 
+  // Set lastVisited to the first unit and first lesson
+  const lastVisited = {
+    unit: units[0]._id,
+    lesson: units[0].lessons[0]._id,
+  };
+
   const newUser = await User.create({
     firstName,
     lastName,
     email,
     password: hashedPassword,
-    progress
+    progress,
+    lastVisited,
   });
 
   if (newUser) {

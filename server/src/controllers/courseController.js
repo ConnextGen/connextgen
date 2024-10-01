@@ -27,6 +27,7 @@ const getCourse = asyncHandler(async (req, res) => {
             description: course.description,
             units: course.units.map(unit => ({
                 title: unit.title,
+                order: unit.order,
                 lessons: unit.lessons.map(lesson => ({
                     title: lesson.title,
                     order: lesson.order,

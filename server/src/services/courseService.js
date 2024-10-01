@@ -54,7 +54,7 @@ const getObject = async (key) => {
 
 const syncCurriculum = async () => {
     const courseTitle = 'The ConnextGen Professional Readiness Course';
-    const courseDescription = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet.';
+    const courseDescription = 'The ConnextGen Professional Readiness Course is a collection of resources that will aid high schoolers in the job/internship application process and workplace skills. Below, you’ll find guidance on resume building, cover letter writing, interview preparation, and professional communication. These resources are being actively maintained as of September 30th; stay tuned for updates!';
 
     let course = await Course.findOne({ title: courseTitle });
 
@@ -78,7 +78,7 @@ const syncCurriculum = async () => {
         }
 
         const unitTitle = parts[0];
-        const lessonTitle = parts[1].split('.')[0];
+        const lessonTitle = parts[1].split('.')[0].replace(/^[^-]*-/, '');
 
         const lesson = await Lesson.findOne({ key });
 
