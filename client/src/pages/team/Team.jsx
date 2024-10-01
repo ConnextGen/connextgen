@@ -11,6 +11,7 @@ import Christian from '../../assets/images/team/christian.jpg';
 import Ronan from '../../assets/images/team/ronan.jpg';
 import Abhikhya from '../../assets/images/team/abhikhya.jpg';
 import An from '../../assets/images/team/an.jpg';
+import Rishi from '../../assets/images/team/rishi.jpg';
 import Rohan from '../../assets/images/team/rohan.jpg';
 import Daniel from '../../assets/images/team/daniel.jpg';
 import Jasmin from '../../assets/images/team/jasmin.jpg';
@@ -56,6 +57,7 @@ const Team = () => {
                     <div className={styles.division}>
                         <h2>Curriculum Team</h2>
                         <div className={styles.members}>
+                            <Member name='Rishi Patel' image={Rishi} />
                             <Member name='Rohan Sarikonda' image={Rohan} />
                             <Member name='Daniel Shi' image={Daniel} />
                         </div>
