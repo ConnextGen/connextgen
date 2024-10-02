@@ -27,7 +27,7 @@ const port = process.env.PORT;
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:3000' || 'https://connextgen.org',
+  origin: 'https://connextgen.org',
   credentials: true,
 }));
 app.use(express.json());
