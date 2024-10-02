@@ -87,8 +87,8 @@ const Lesson = () => {
             <NavigationBar isSolidBackground={true} isLesson={true} toggleSidePanel={toggleSidePanel} />
             <div className={styles.container}>
                 <div>
-                    <h1>{formatTitle(lesson)}</h1>
-                    <Markdown>{lessonContent}</Markdown>
+                    <h1 className={styles.title}>{formatTitle(lesson)}</h1>
+                    <Markdown className={styles.markdown}>{lessonContent}</Markdown>
                 </div>
             </div>
             <AnimatePresence>

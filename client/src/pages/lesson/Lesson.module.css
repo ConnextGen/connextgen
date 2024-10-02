@@ -17,18 +17,43 @@
     padding: 6vh 25vw;
 }
 
-.container h1 {
-    margin: 0;
+.title {
+    margin: 0 0 -2vh;
+    text-align: center;
     font-family: 'DM Serif Text', serif;
     font-size: 6em;
     font-weight: 400;
     color: #e2f3f3;
 }
 
-.container p {
+.markdown {
+    width: 100%;
+}
+
+.markdown h1 {
+    margin: 0;
+    font-family: 'DM Serif Text', serif;
+    font-size: 2.5em;
+    font-weight: 400;
+    color: #e2f3f3;
+}
+
+.markdown h3 {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+    color: #e2f3f3;
+}
+
+.markdown p {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.5em;
     font-weight: 300;
+    color: #e2f3f3;
+}
+
+.markdown li::marker {
     color: #e2f3f3;
 }
