@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { formatTitle } from '../../utils/formattingUtils';
 import styles from './LessonNavigationBar.module.css';
 
@@ -20,12 +20,12 @@ const LessonNavigationBar = ({ unit, lessons, isVisible, close }) => {
                 <h1>{formatTitle(unit)}</h1>
                 <div className={styles.lessons}>
                     {lessons.map((lesson, index) => (
-                        <Link to={`/course/${unit}/${lesson}`} className={styles.lesson} onClick={handleClick}>
+                        <HashLink to={`/course/${unit}/${lesson}`} className={styles.lesson} onClick={handleClick}>
                             <div>
                                 <span>Lesson {index + 1}</span>
                                 <p>{formatTitle(lesson)}</p>
                             </div>
-                        </Link>
+                        </HashLink>
                     ))}
                 </div>
             </div>

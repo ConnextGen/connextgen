@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { getCourse, getProgress } from '../../api';
 import NavigationBar from '../../components/nav/NavigationBar';
@@ -83,7 +84,7 @@ const Course = () => {
             <NavigationBar isSolidBackground={true} />
             <div className={styles.background}>
                 <div className={styles.panel}>
-                    <Link
+                    <HashLink
                         to="#progress"
                         className={activeSection === 'progress' ? styles.active : ''}
                     >
@@ -91,8 +92,8 @@ const Course = () => {
                             <img src={ProgressIcon} alt="progress icon"></img>
                             <span>Progress</span>
                         </div>
-                    </Link>
-                    <Link
+                    </HashLink>
+                    <HashLink
                         to="#course"
                         className={activeSection === 'course' ? styles.active : ''}
                     >
@@ -100,7 +101,7 @@ const Course = () => {
                             <img src={CourseIcon} alt="course icon"></img>
                             <span>Course</span>
                         </div>
-                    </Link>
+                    </HashLink>
                 </div>
                 <div className={styles.content}>
                     <div id="progress" ref={progressRef} className={styles.progress}>
@@ -114,9 +115,9 @@ const Course = () => {
                         ) : (
                             <p className={styles.description}>Loading progress...</p>
                         )}
-                        <Link to="#units" className={styles.link}>
+                        <HashLink to="#units" className={styles.link}>
                             View full syllabus &gt;
-                        </Link>
+                        </HashLink>
                     </div>
                     <div id="course" ref={courseRef} className={styles.course}>
                         <h1 className={styles.title}>{course?.title || 'Loading...'}</h1>

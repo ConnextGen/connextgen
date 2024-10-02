@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { getPreviousLesson, getNextLesson } from '../../api';
 import styles from './LessonFooter.module.css';
 
@@ -26,17 +26,17 @@ const LessonFooter = ({ unit, lesson }) => {
     return (
         <div className={styles.container}>
             <div className={styles.footer}>
-                <Link 
+                <HashLink 
                     to={previousLesson && previousLesson.unit ? `/course/${previousLesson.unit}/${previousLesson.lesson}` : '#'}
                     className={previousLesson && previousLesson.unit ? '' : styles.disabled}
                 >
                     {previousLesson && previousLesson.unit ? '< Previous' : ''}
-                </Link>
-                <Link 
+                </HashLink>
+                <HashLink 
                     to={nextLesson && nextLesson.unit ? `/course/${nextLesson.unit}/${nextLesson.lesson}` : '#'}
                 >
                     {nextLesson && nextLesson.unit ? 'Next >' : ''}
-                </Link>
+                </HashLink>
             </div>
         </div>
     );    
