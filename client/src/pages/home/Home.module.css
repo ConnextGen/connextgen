@@ -189,7 +189,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0z auto;
+    margin: 0 auto;
     width: 80vw;
     gap: 6vw;
 }
@@ -239,8 +239,8 @@ html {
 .aspect img {
     width: calc(80px + 16vw);
     padding: 4vw;
-    margin-top: -35px;
-    margin-bottom: -35px
+    margin-top: -8vh;
+    margin-bottom: -8vh;
 }
 
 .waveTop {
