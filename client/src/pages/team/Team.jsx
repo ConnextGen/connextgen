@@ -14,6 +14,7 @@ import An from '../../assets/images/team/an.jpg';
 import Rishi from '../../assets/images/team/rishi.jpg';
 import Rohan from '../../assets/images/team/rohan.jpg';
 import Daniel from '../../assets/images/team/daniel.jpg';
+import Shivani from '../../assets/images/team/shivani.jpg';
 import Jasmin from '../../assets/images/team/jasmin.jpg';
 import Footer from '../../components/footer/Footer';
 import styles from './Team.module.css';
@@ -65,7 +66,7 @@ const Team = () => {
                     <div className={styles.division}>
                         <h2>Social Media Team</h2>
                         <div className={styles.members}>
-                            <Member name='Shivani Gupta' image={Logo} />
+                            <Member name='Shivani Gupta' image={Shivani} />
                             <Member name='Jasmin Bella' image={Jasmin} />
                         </div>
                     </div>
