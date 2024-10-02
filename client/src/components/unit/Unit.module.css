@@ -93,3 +93,39 @@
     background: #294c60;
     margin: 1vh 0 3vh;
 }
+
+@media (max-width: 768px) {
+    .unit h1 {
+        padding: 1vh 0 0 4vw;
+        max-width: 50%;
+    }
+
+    .unit h1 {
+        font-size: 2em;
+    }
+
+    .progress p {
+        font-size: 1.5vh;
+    }
+
+    .percentage {
+        font-size: 1vh;
+    }
+
+    .lessons {
+        width: 70%;
+        padding: 0 0 1vh 8vw;
+    }
+
+    .lessons.expanded {
+        padding: 0 0 1vh 8vw;
+    }
+
+    .lessons span {
+        font-size: 1em;
+    }
+
+    .lessons p {
+        font-size: 1.2em;
+    }
+}

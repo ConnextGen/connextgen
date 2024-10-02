@@ -29,7 +29,7 @@ const Home = () => {
             <div className={styles.landing}>
                 <div className={styles.hero}>
                     <div className={styles.pane}>
-                        <img className={styles.heroText}src={Logo2} alt='logo2'></img>
+                        <img className={styles.heroText} src={Logo2} alt='logo2'></img>
                         <h1>Enabling high school students to gain professional experience.</h1>
                         {state.isAuthenticated ? <Button id={styles.signUpButton} component={Link} to='/course' variant='contained'>View Course</Button> : <Button id={styles.signUpButton} component={Link} to='/signup' variant='contained'>Sign Up</Button>}
                     </div>

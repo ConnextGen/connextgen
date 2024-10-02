@@ -57,3 +57,30 @@
 .markdown li::marker {
     color: #e2f3f3;
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10vh 0 4vh;
+    }
+
+    .container div {
+        padding: 4vh 10vw;
+    }
+
+    .title {
+        margin: 0 0 -4vh;
+        font-size: 4em;
+    }
+
+    .markdown h1, .markdown h2 {
+        font-size: 2em;
+    }
+
+    .markdown h3 {
+        font-size: 1.5em;
+    }
+
+    .markdown p {
+        font-size: 1.2em;
+    }
+}

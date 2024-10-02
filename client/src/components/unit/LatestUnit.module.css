@@ -89,3 +89,30 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
 }
+
+@media (max-width: 768px) {
+    .body {
+        padding: 4vh 6vw;
+    }
+
+    .body h1 {
+        font-size: 2.5em;
+    }
+
+    .progress {
+        height: 6vh;
+    }
+
+    .bar {
+        padding-right: 5px;
+        font-size: 1.2em;
+    }
+
+    .resume {
+        width: 30%;
+    }
+
+    .resume a {
+        font-size: 1em;
+    }
+}

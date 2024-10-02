@@ -11,10 +11,7 @@
 .wave {
     width: 100vw;
     min-width: 900px;
-    /* margin-left: min(calc(50vw - 450px), 0px);
-    margin-right: min(calc(50vw - 450px), 0px); */
     height: auto;
-    /* position: absolute; */
     margin-top: -1px;
     
 }
@@ -47,4 +44,25 @@
     font-size: max(1.5vw, 12.5px);
     color: white;
     margin-top: -0.5vh;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        gap: 0.5vh;
+    }
+    
+    .logo {
+        margin-top: 10px;
+        width: 10vw;
+        min-width: 60px;
+    }
+
+    .icon {
+        width: 8vw;
+        min-width: 60px;
+    }
+
+    .footer p {
+        font-size: calc(0.7rem + 1vw);
+    }
 }

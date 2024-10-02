@@ -48,7 +48,7 @@ html {
     margin: 0 5vw;
     font-family: "Quicksand", sans-serif;
     font-weight: 400;
-    font-size: calc(0.7rem + 1.4vw);
+    font-size: calc(0.8rem + 1.4vw);
     color: #294c60;
     line-height: 1.5;
     letter-spacing: 0.01em;
@@ -237,7 +237,7 @@ html {
 }
 
 .aspect img {
-    width: calc(80px + 12vw);
+    width: calc(80px + 16vw);
     padding: 4vw;
     margin-top: -35px;
     margin-bottom: -35px
@@ -288,7 +288,6 @@ html {
     margin: 0 0 2vh;
 }
 
-
 /*
 small screen
 */
@@ -303,13 +302,17 @@ small screen
         gap: 3vh;
         padding: 5vh 0;
     }
+
+    .heroText {
+        width: 80%;
+    }
     
     .heroImage {
         display: none;
     }
     
     .pane h1 {
-        font-size: calc(0.7rem + 1.5vw);
+        font-size: calc(0.8rem + 1.5vw);
         text-align: center;
     }
 
@@ -321,11 +324,11 @@ small screen
     }
 
     .mission h1 {
-        font-size: 3em;
+        font-size: 2.5em;
     }
     
     .mission p {
-        font-size: 1.5em;
+        font-size: calc(0.8rem + 1.5vw);
     }
     
     .background {
@@ -352,7 +355,7 @@ small screen
     
     .aspectIcon {
         padding-top: 0 !important;
-        padding-bottom: 0 !important;
+        padding-bottom: 2vh !important;
     }
     
     .aspects {
@@ -374,7 +377,7 @@ small screen
     }
 
     .aspect p {
-        font-size: 1.5em;
+        font-size: calc(0.8rem + 1.5vw);
     }
 
     .help h1 {
@@ -382,7 +385,7 @@ small screen
     }
 
     .help p {
-        font-size: 1.5em;
+        font-size: calc(0.8rem + 1.5vw);
     }
 
     #signUpButton, #helpButton {
