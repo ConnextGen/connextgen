@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Course from './pages/course/Course';
 import Lesson from './pages/lesson/Lesson';
@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className='App'>
       <title>ConnextGen</title>
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
           <Route path='/course' element={<Course />} />
@@ -19,7 +19,7 @@ const App = () => {
           <Route path='/login' element={<LogIn />} />
           <Route path='/signup' element={<SignUp />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }

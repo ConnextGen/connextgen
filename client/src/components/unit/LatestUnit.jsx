@@ -1,4 +1,4 @@
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import { formatTitle } from '../../utils/formattingUtils';
 import styles from './LatestUnit.module.css';
 
@@ -14,7 +14,7 @@ const LatestUnit = ({ unit, lesson, percentage }) => {
                     {percentage > 0 ? <div className={styles.bar} style={{ width: `${percentage}%` }}>{percentage < 90 ? percentage + '%' : null}</div> : null}
                 </div>
                 <div className={styles.resume}>
-                    <HashLink to={`/course/${unit.title}/${lesson.title}`}>Resume &gt;</HashLink>
+                    <Link to={`/course/${unit.title}/${lesson.title}`}>Resume &gt;</Link>
                 </div>
             </div>
         </div>

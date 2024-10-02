@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link'
 import { useAuth } from '../../contexts/AuthContext';
 import NavigationBar from '../../components/nav/NavigationBar';
 import Footer from '../../components/footer/Footer';
@@ -38,11 +37,11 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <HashLink to='#mission' className={styles.arrowContainer}>
+            <Link to='#mission' className={styles.arrowContainer}>
                 <div className={styles.arrow}></div>
                 <div className={styles.arrow}></div>
                 <div className={styles.arrow}></div>
-            </HashLink>
+            </Link>
             <div className={styles.mission} id='mission'>
                 <img className={styles.waveTop} src={Wave2} alt='wave2'></img>
                 <h1>Our Mission</h1>

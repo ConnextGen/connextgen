@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getLesson, getUnit, completeLesson } from '../../api';
 import { AnimatePresence, motion } from 'framer-motion';
 import { formatTitle } from '../../utils/formattingUtils';
+import Markdown from 'react-markdown';
 import styles from './Lesson.module.css'
 import NavigationBar from '../../components/nav/NavigationBar';
 import LessonNavigationBar from '../../components/nav/LessonNavigationBar';
@@ -87,7 +88,7 @@ const Lesson = () => {
             <div className={styles.container}>
                 <div>
                     <h1>{formatTitle(lesson)}</h1>
-                    <p>{lessonContent}</p>
+                    <Markdown>{lessonContent}</Markdown>
                 </div>
             </div>
             <AnimatePresence>
