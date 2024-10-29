@@ -36,6 +36,7 @@ const Team = () => {
                             <Member name='Armaan Priyadarshan' title='CEO' image={Armaan} />
                             <Member name='Sidharth Subbiah' title='CMO' image={Sid} />
                             <Member name='Jacob Jiang' title='CTO' image={Logo} />
+                            <Member name='Ronan Pigeaud' title='COO' image={Ronan} />
                         </div>
                     </div>
                     <div className={styles.division}>
@@ -45,7 +46,6 @@ const Team = () => {
                             <Member name='Benjamin Reitz' image={Ben} />
                             <Member name='Eshaan Shah' image={Eeshan} />
                             <Member name='Christian Riddle' image={Christian} />
-                            <Member name='Ronan Pigeaud' image={Ronan} />
                         </div>
                     </div>
                     <div className={styles.division}>
